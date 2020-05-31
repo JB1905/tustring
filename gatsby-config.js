@@ -6,7 +6,7 @@ module.exports = {
       summary: ``,
     },
     description: ``,
-    siteUrl: ``,
+    // siteUrl: ``,
     social: {
       twitter: ``,
     },

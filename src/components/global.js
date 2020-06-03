@@ -26,6 +26,19 @@ const Global = createGlobalStyle`
     min-width: 320px;
     font-family: "Nunito", sans-serif;
     font-size: 16px;
+
+    &.dark {
+      color: #fff;
+      background-color: #18191A;
+
+      -webkit-font-smoothing: antialiased;
+
+      --primary-color: #6e70f6;
+      ${"" /* --secondary-color: #8140b1; */}
+      --card-color: #242526;
+      --border-color: #fff2;
+      --background-color: #242526;
+    }
   }
 
   a {

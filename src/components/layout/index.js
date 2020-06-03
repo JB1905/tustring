@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import DarkModeToggle from "react-dark-mode-toggle"
+import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import { Link } from "gatsby"
 
 import Global from "../global"
@@ -16,7 +17,7 @@ import {
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
 
-  const [isDarkMode, setIsDarkMode] = useState(() => false)
+  // const [isDarkMode, setIsDarkMode] = useState(() => false)
 
   return (
     <Page>
@@ -26,11 +27,15 @@ const Layout = ({ location, title, children }) => {
             <Link to={`/`}>{title}</Link>
           </Title>
 
-          <DarkModeToggle
-            onChange={setIsDarkMode}
-            checked={isDarkMode}
-            size={60}
-          />
+          <ThemeToggler>
+            {({ theme, toggleTheme }) => (
+              <DarkModeToggle
+                onChange={e => toggleTheme(e ? "dark" : "light")}
+                checked={theme === "dark"}
+                size={60}
+              />
+            )}
+          </ThemeToggler>
         </HeaderContent>
       </Header>
 

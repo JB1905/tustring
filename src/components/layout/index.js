@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import DarkModeToggle from "react-dark-mode-toggle"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import { Link } from "gatsby"
@@ -16,8 +16,6 @@ import {
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
-
-  // const [isDarkMode, setIsDarkMode] = useState(() => false)
 
   return (
     <Page>

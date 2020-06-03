@@ -2,14 +2,11 @@ module.exports = {
   siteMetadata: {
     title: `tuString`,
     author: {
-      name: ``,
-      summary: ``,
+      name: `Jakub Biesiada`,
+      summary: `Front-end developer i pasjonat nadgryzionych jabłek. Fan nowinek JavaScriptowych i nie tylko. Wielbiciel punk rocka i dobrej kawy.`,
     },
     description: ``,
-    // siteUrl: ``,
-    social: {
-      twitter: ``,
-    },
+    siteUrl: `https://tu-string.now.sh`,
   },
   plugins: [
     {
@@ -55,23 +52,26 @@ module.exports = {
       options: {},
     },
     `gatsby-plugin-feed`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: ``,
-        short_name: ``,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: ``,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: ``,
+    //     short_name: ``,
+    //     start_url: `/`,
+    //     background_color: `#ffffff`,
+    //     theme_color: `#663399`,
+    //     display: `minimal-ui`,
+    //     icon: ``,
+    //   },
+    // },
+    `gatsby-plugin-dark-mode`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
+        fonts: [`nunito:400,600,700,900`],
+        display: `swap`,
       },
     },
   ],

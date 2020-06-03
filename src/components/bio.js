@@ -1,63 +1,81 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import styled from "styled-components"
 
-import { rhythm } from "../utils/typography"
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 10px;
+  /* background-color: #f8f8f8; */
+  /* padding: 0 0 20px; */
+
+  span {
+    display: block;
+    margin-top: 8px;
+  }
+`
+
+const AuthorPic = styled(Image)`
+  border-radius: 50%;
+  min-width: 56px;
+  height: 56px;
+  /* margin-right: 16px; */
+  margin-top: 16px;
+  margin-bottom: 16px;
+
+  /* ::before {
+    content: "";
+    left: -4px;
+    top: -4px;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    background-color: #f00;
+    position: absolute;
+  } */
+`
+
+const Content = styled.p`
+  max-width: 500px;
+  margin-top: 0;
+`
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed(width: 56, height: 56) {
             ...GatsbyImageSharpFixed
           }
         }
       }
+
       site {
         siteMetadata {
           author {
             name
             summary
           }
-          social {
-            twitter
-          }
         }
       }
     }
   `)
 
-  const { author, social } = data.site.siteMetadata
-  return (
-    <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(2.5),
-      }}
-    >
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author.name}
-        style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
-        }}
-        imgStyle={{
-          borderRadius: `50%`,
-        }}
-      />
+  const { author } = data.site.siteMetadata
 
-      <p>
-        Written by <strong>{author.name}</strong> {author.summary}
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
-      </p>
-    </div>
+  return (
+    <Wrapper>
+      <AuthorPic fixed={data.avatar.childImageSharp.fixed} alt={author.name} />
+
+      <Content>
+        <strong>{author.name}</strong>
+
+        <span>{author.summary}</span>
+      </Content>
+    </Wrapper>
   )
 }
 

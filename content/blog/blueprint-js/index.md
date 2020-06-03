@@ -1,6 +1,8 @@
 ---
-title: Blueprint
+title: Blueprint – trochę inna biblioteka komponentów dla Reacta 
 date: "2015-05-28T22:40:32.169Z"
-description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 ---
+
+Zapewne znasz biblioteki takie jak Material UI, Bootstrap czy Tailwind CSS. Ale czy słyszałeś o Blueprint JS?
+
 

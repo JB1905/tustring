@@ -1,6 +1,22 @@
 import { createGlobalStyle } from "styled-components"
 
 const Global = createGlobalStyle`
+  :root {
+    --primary-color: #2d2faf;
+    --secondary-color: #8140b1;
+    --card-color: #f8f8f8;
+    --border-color: #0001;
+    --background-color: #fff;
+
+    --radius-corners: 10px;
+    
+    --wrapper-size: 62rem;
+
+    @supports (backdrop-filter: blur(20px)) {
+      --background-color: #fffd;
+    }
+  }
+
   html {
     font-size: 62.5%;
   }
@@ -13,7 +29,7 @@ const Global = createGlobalStyle`
   }
 
   a {
-    color: #2d2faf;
+    color: var(--primary-color);
     text-decoration: none;
 
     :hover {

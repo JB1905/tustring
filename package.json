@@ -37,12 +37,10 @@
     "gatsby-transformer-sharp": "^2.5.3",
     "prismjs": "^1.20.0",
     "react": "^16.13.1",
+    "react-dark-mode-toggle": "^0.0.5",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
-    "react-typography": "^0.16.19",
-    "styled-components": "^5.1.1",
-    "typography": "^0.16.19",
-    "typography-theme-wordpress-2016": "^0.16.19"
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "prettier": "2.0.5"

@@ -1,11 +1,28 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import styled from "styled-components"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-// import { rhythm, scale } from "../utils/typography"
+const Wrapper = styled.article``
+
+const Footer = styled.footer`
+  margin-top: 50px;
+`
+
+const Pagination = styled.nav`
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 8px 0;
+      text-align: center;
+    }
+  }
+`
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -19,7 +36,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
 
-      <article>
+      <Wrapper>
         <header>
           <h1>{post.frontmatter.title}</h1>
 
@@ -28,14 +45,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
 
-        <hr />
-
-        <footer>
+        <Footer>
           <Bio />
-        </footer>
-      </article>
+        </Footer>
+      </Wrapper>
 
-      <nav>
+      <Pagination>
         <ul>
           <li>
             {previous && (
@@ -53,7 +68,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             )}
           </li>
         </ul>
-      </nav>
+      </Pagination>
     </Layout>
   )
 }

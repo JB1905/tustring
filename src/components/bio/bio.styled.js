@@ -35,14 +35,21 @@ export const Content = styled.p`
 
 export const SocialMedia = styled.div`
   height: 30px;
+
+  a {
+    width: 36px;
+    height: inherit;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 200ms ease-in-out;
+
+    :hover {
+      transform: scale(1.2);
+    }
+  }
 `
 
 export const SocialMediaIcon = styled(FontAwesomeIcon)`
-  padding: 10px;
   color: var(--primary-color);
-  transition: transform 200ms ease-in-out;
-
-  :hover {
-    transform: scale(1.2);
-  }
 `

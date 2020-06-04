@@ -6,13 +6,16 @@ import { Wrapper, Title } from "./post.styled"
 const Post = ({ data }) => {
   const title = data.frontmatter.title || data.fields.slug
 
+  // TODO cup length (reading time)
+
   return (
     <Wrapper>
       <header>
         <Title>
           <Link to={data.fields.slug}>{title}</Link>
         </Title>
-        <small>{data.frontmatter.date}</small> &bull;
+        <small>{data.frontmatter.date}</small> &bull; ☕️{" "}
+        {data.fields.readingTime.text}
       </header>
 
       <section>

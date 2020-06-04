@@ -22,7 +22,7 @@ export const Header = styled.header`
   align-items: center;
   background-color: var(--background-color);
   border-bottom: 1px solid var(--border-color);
-  height: calc(${HEADER_HEIGHT}px);
+  height: calc(${HEADER_HEIGHT}px + env(safe-area-inset-top));
   padding-top: env(safe-area-inset-top);
   padding-bottom: 0;
   z-index: 10;

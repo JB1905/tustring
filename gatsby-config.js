@@ -9,7 +9,7 @@ module.exports = {
     siteUrl: `https://tu-string.now.sh`,
     social: {
       github: `https://github.com/JB1905/`,
-      linked: `https://www.linkedin.com/in/jakub-biesiada/`,
+      linkedin: `https://www.linkedin.com/in/jakub-biesiada/`,
       facebook: `https://www.facebook.com/kuba.biesiada/`,
       twitter: `https://twitter.com/JBiesiad/`,
       portfolio: `https://jb1905.github.io/portfolio/`,

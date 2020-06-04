@@ -35,7 +35,7 @@ const Bio = () => {
           }
 
           social {
-            linked
+            linkedin
             github
             twitter
             facebook
@@ -63,6 +63,7 @@ const Bio = () => {
           data-size="large"
           data-show-count="true"
           aria-label="Follow @JB1905 on GitHub"
+          // style={{ height: 28 }}
         >
           Follow @JB1905
         </GitHubButton>
@@ -71,19 +72,19 @@ const Bio = () => {
       </Content>
 
       <SocialMedia>
-        <a href={social.linked}>
+        <a href={social.linkedin} aria-label="LinkedIn">
           <SocialMediaIcon icon={faLinkedin} />
         </a>
 
-        <a href={social.github}>
+        <a href={social.github} aria-label="GitHub">
           <SocialMediaIcon icon={faGithub} />
         </a>
 
-        <a href={social.twitter}>
+        <a href={social.twitter} aria-label="Twitter">
           <SocialMediaIcon icon={faTwitter} />
         </a>
 
-        <a href={social.facebook}>
+        <a href={social.facebook} aria-label="Facebook">
           <SocialMediaIcon icon={faFacebook} />
         </a>
       </SocialMedia>

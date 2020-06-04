@@ -37,8 +37,9 @@ export const SocialMedia = styled.div`
   height: 30px;
 
   a {
-    width: 36px;
-    height: inherit;
+    width: 30px;
+    height: 30px;
+    margin: 0 3px;
     display: inline-flex;
     justify-content: center;
     align-items: center;

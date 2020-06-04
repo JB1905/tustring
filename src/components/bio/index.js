@@ -72,19 +72,19 @@ const Bio = () => {
 
       <SocialMedia>
         <a href={social.linked}>
-          <SocialMediaIcon icon={faLinkedin} />
+          <SocialMediaIcon icon={faLinkedin} size={20} />
         </a>
 
         <a href={social.github}>
-          <SocialMediaIcon icon={faGithub} />
+          <SocialMediaIcon icon={faGithub} size={20} />
         </a>
 
         <a href={social.twitter}>
-          <SocialMediaIcon icon={faTwitter} />
+          <SocialMediaIcon icon={faTwitter} size={20} />
         </a>
 
         <a href={social.facebook}>
-          <SocialMediaIcon icon={faFacebook} />
+          <SocialMediaIcon icon={faFacebook} size={20} />
         </a>
       </SocialMedia>
     </Wrapper>

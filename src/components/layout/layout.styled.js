@@ -20,9 +20,10 @@ export const Header = styled.header`
   align-items: center;
   background-color: var(--background-color);
   border-bottom: 1px solid var(--border-color);
-  height: calc(${HEADER_HEIGHT}px + env(safe-area-inset-top));
+  height: calc(${HEADER_HEIGHT}px);
   padding: 0 1.5rem;
   padding-top: env(safe-area-inset-top);
+  padding-bottom: 0;
   z-index: 10;
 
   @supports (backdrop-filter: blur(20px)) {
@@ -46,7 +47,7 @@ export const Main = styled.main`
 
 export const Footer = styled.footer`
   ${limitedArea}
-  padding: 2.5rem 1.5rem;
+  padding: 2.5rem 1.5rem calc(2.5rem + env(safe-area-inset-bottom));
   text-align: center;
 `
 

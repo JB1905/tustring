@@ -7,7 +7,6 @@ import {
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons"
 import GitHubButton from "react-github-btn"
-// import { ThemeToggler } from "gatsby-plugin-dark-mode"
 
 import {
   Wrapper,
@@ -58,8 +57,6 @@ const Bio = () => {
           <strong>{author.name}</strong>
         </a>
 
-        {/* <ThemeToggler>
-          {({ theme }) => ( */}
         <GitHubButton
           href="https://github.com/JB1905"
           // data-color-scheme={theme === "dark" ? "dark" : "light"}
@@ -69,8 +66,6 @@ const Bio = () => {
         >
           Follow @JB1905
         </GitHubButton>
-        {/* )}
-        </ThemeToggler> */}
 
         <span>{author.summary}</span>
       </Content>

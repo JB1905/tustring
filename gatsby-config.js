@@ -5,7 +5,7 @@ module.exports = {
       name: `Jakub Biesiada`,
       summary: `Front-end developer i pasjonat nadgryzionych jabłek. Fan nowinek JavaScriptowych i nie tylko. Wielbiciel punk rocka i dobrej kawy.`,
     },
-    description: ``,
+    description: `O front-endzie i nie tylko`,
     siteUrl: `https://tu-string.now.sh`,
     social: {
       github: `https://github.com/JB1905/`,

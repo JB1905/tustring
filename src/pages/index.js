@@ -8,6 +8,7 @@ import Post from "../components/post"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
+
   const posts = data.allMarkdownRemark.edges
 
   return (

@@ -11,7 +11,7 @@ module.exports = {
       github: `https://github.com/JB1905/`,
       linked: `https://www.linkedin.com/in/jakub-biesiada/`,
       facebook: `https://www.facebook.com/kuba.biesiada/`,
-      twitter: ``,
+      twitter: `https://twitter.com/JBiesiad/`,
       portfolio: `https://jb1905.github.io/portfolio/`,
     },
   },

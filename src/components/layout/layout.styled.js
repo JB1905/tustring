@@ -20,8 +20,9 @@ export const Header = styled.header`
   align-items: center;
   background-color: var(--background-color);
   border-bottom: 1px solid var(--border-color);
-  height: ${HEADER_HEIGHT}px;
+  height: calc(${HEADER_HEIGHT}px + env(safe-area-inset-top));
   padding: 0 1.5rem;
+  padding-top: env(safe-area-inset-top);
   z-index: 10;
 
   @supports (backdrop-filter: blur(20px)) {

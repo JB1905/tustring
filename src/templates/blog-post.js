@@ -6,8 +6,6 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Wrapper = styled.article``
-
 const Footer = styled.footer`
   margin-top: 50px;
 `
@@ -26,7 +24,9 @@ const Pagination = styled.nav`
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
+
   const siteTitle = data.site.siteMetadata.title
+
   const { previous, next } = pageContext
 
   return (
@@ -36,7 +36,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
 
-      <Wrapper>
+      <article>
         <header>
           <h1>{post.frontmatter.title}</h1>
 
@@ -48,25 +48,25 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <Footer>
           <Bio />
         </Footer>
-      </Wrapper>
+      </article>
 
       <Pagination>
         <ul>
-          {previous && (
-            <li>
+          <li>
+            {previous && (
               <Link to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
-            </li>
-          )}
+            )}
+          </li>
 
-          {next && (
-            <li>
+          <li>
+            {next && (
               <Link to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
               </Link>
-            </li>
-          )}
+            )}
+          </li>
         </ul>
       </Pagination>
     </Layout>

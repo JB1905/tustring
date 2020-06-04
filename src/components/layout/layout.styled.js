@@ -4,7 +4,9 @@ import { HEADER_HEIGHT } from "../../constants"
 
 export const limitedArea = css`
   max-width: var(--wrapper-size);
+  padding: 0 1.5rem;
   margin: 0 auto;
+  width: 100%;
 `
 
 export const Page = styled.div`
@@ -21,7 +23,6 @@ export const Header = styled.header`
   background-color: var(--background-color);
   border-bottom: 1px solid var(--border-color);
   height: calc(${HEADER_HEIGHT}px);
-  padding: 0 1.5rem;
   padding-top: env(safe-area-inset-top);
   padding-bottom: 0;
   z-index: 10;
@@ -35,13 +36,11 @@ export const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   ${limitedArea}
 `
 
 export const Main = styled.main`
   ${limitedArea}
-  padding: 0 1.5rem;
   flex: 1;
 `
 

@@ -1,5 +1,6 @@
 import Image from "gatsby-image"
 import styled from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import { AUTHOR_PIC_SIZE } from "../../constants"
 
@@ -34,4 +35,14 @@ export const Content = styled.p`
 
 export const SocialMedia = styled.div`
   height: 30px;
+`
+
+export const SocialMediaIcon = styled(FontAwesomeIcon)`
+  padding: 10px;
+  color: var(--primary-color);
+  transition: transform 200ms ease-in-out;
+
+  :hover {
+    transform: scale(1.2);
+  }
 `

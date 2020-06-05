@@ -4,11 +4,11 @@ export function formatReadingTime(minutes) {
   if (cups > 5) {
     return `${new Array(Math.round(cups / Math.E))
       .fill("🍱")
-      .join("")} ${minutes} minut czytania`
+      .join("")} ${minutes} min. czytania`
   } else {
     return `${new Array(cups || 1)
       .fill("☕️")
-      .join("")} ${minutes} minut czytania`
+      .join("")} ${minutes} min. czytania`
   }
 }
 

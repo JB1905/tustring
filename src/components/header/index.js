@@ -2,14 +2,9 @@ import React, { useContext } from "react"
 import DarkModeToggle from "react-dark-mode-toggle"
 import { Link } from "gatsby"
 
-import { ThemeContext } from "../context"
+import { ThemeContext } from "../../context"
 
-// TODO
-import {
-  Header as HeaderWrapper,
-  HeaderContent,
-  Title,
-} from "./layout/layout.styled"
+import { HeaderWrapper, HeaderContent, Title } from "./header.styled"
 
 const Header = ({ location, title }) => {
   const rootPath = `${__PATH_PREFIX__}/`

@@ -17,9 +17,6 @@ const Layout = ({ location, title, children }) => (
 
       <Footer>
         Zbudowane przy użyciu <a href="https://www.gatsbyjs.org/">Gatsby.js</a>
-        {/* ,
-        kod źródłowy dostępny{" "}
-        <a href="https://github.com/JB1905/tu-string/">Open Source</a>! */}
       </Footer>
 
       <Global />

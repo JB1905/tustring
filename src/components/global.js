@@ -36,6 +36,10 @@ const Global = createGlobalStyle`
       --card-color: #242526;
       --border-color: #fff2;
       --background-color: #242526;
+
+      img {
+        filter: grayscale(0.2) brightness(0.8);
+      }
     }
   }
 
@@ -43,9 +47,10 @@ const Global = createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    // -webkit-tap-highlight-color: transparent;
   }
 
   a {

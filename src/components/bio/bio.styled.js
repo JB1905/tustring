@@ -21,11 +21,29 @@ export const Wrapper = styled.div`
   }
 `
 
+export const Profile = styled.div`
+  margin: 16px 0 10px;
+
+  ::before {
+    content: "";
+    width: ${AUTHOR_PIC_SIZE + 8}px;
+    height: ${AUTHOR_PIC_SIZE + 8}px;
+    position: absolute;
+    background-image: url(https://raw.githubusercontent.com/JB1905/portfolio/master/src/images/trianglify.svg);
+    background-size: cover;
+    margin-left: -4px;
+    margin-top: -4px;
+    border-radius: 50%;
+  }
+`
+
 export const AuthorPic = styled(Image)`
-  margin: 16px 0;
-  border-radius: 50%;
   min-width: ${AUTHOR_PIC_SIZE}px;
   height: ${AUTHOR_PIC_SIZE}px;
+
+  img {
+    border-radius: 50%;
+  }
 `
 
 export const Content = styled.p`

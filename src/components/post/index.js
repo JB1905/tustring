@@ -1,12 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import { formatPostDate, formatReadingTime } from "../../helpers"
+
 import { Wrapper, Title } from "./post.styled"
 
 const Post = ({ data }) => {
   const title = data.frontmatter.title || data.fields.slug
-
-  // TODO cup length (reading time)
 
   return (
     <Wrapper>
@@ -14,8 +14,8 @@ const Post = ({ data }) => {
         <Title>
           <Link to={data.fields.slug}>{title}</Link>
         </Title>
-        <small>{data.frontmatter.date}</small> &bull; ☕️{" "}
-        {data.fields.readingTime.minutes}
+        {formatPostDate(data.frontmatter.date, "pl")} &bull;{" "}
+        {formatReadingTime(Math.ceil(data.fields.readingTime.minutes))}
       </header>
 
       <section>

@@ -12,6 +12,7 @@ import { ThemeContext } from "../../context"
 
 import {
   Wrapper,
+  Profile,
   AuthorPic,
   Content,
   SocialMedia,
@@ -54,7 +55,12 @@ const Bio = () => {
 
   return (
     <Wrapper>
-      <AuthorPic fixed={data.avatar.childImageSharp.fixed} alt={author.name} />
+      <Profile>
+        <AuthorPic
+          fixed={data.avatar.childImageSharp.fixed}
+          alt={author.name}
+        />
+      </Profile>
 
       <Content>
         <a href={social.portfolio}>

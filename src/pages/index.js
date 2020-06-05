@@ -18,7 +18,11 @@ const BlogIndex = ({ data, location }) => {
       <Bio />
 
       {posts.map(({ node }, index) => (
-        <Post data={node} isLastItem={index === posts.length - 1} key={node.fields.slug} />
+        <Post
+          data={node}
+          isLastItem={index === posts.length - 1}
+          key={node.fields.slug}
+        />
       ))}
     </Layout>
   )

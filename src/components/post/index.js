@@ -5,11 +5,11 @@ import { formatPostDate, formatReadingTime } from "../../helpers"
 
 import { Wrapper, Title } from "./post.styled"
 
-const Post = ({ data }) => {
+const Post = ({ data, isLastItem = false }) => {
   const title = data.frontmatter.title || data.fields.slug
 
   return (
-    <Wrapper>
+    <Wrapper isLastItem={isLastItem}>
       <header>
         <Title>
           <Link to={data.fields.slug}>{title}</Link>

@@ -7,6 +7,7 @@ import { limitedArea } from "../../mixins"
 export const HeaderWrapper = styled.header`
   top: 0;
   position: sticky;
+  overflow: hidden;
   display: flex;
   align-items: center;
   background-color: var(--background-color);

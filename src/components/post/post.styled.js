@@ -1,8 +1,11 @@
 import styled from "styled-components"
 
 export const Wrapper = styled.article`
-  border-bottom: 1px solid var(--border-color);
   padding: 20px 0;
+
+  ${({ isLastItem }) => !isLastItem && `
+    border-bottom: 1px solid var(--border-color);
+  `}
 `
 
 export const Title = styled.h2`

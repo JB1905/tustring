@@ -7,7 +7,6 @@ import { limitedArea } from "../../mixins"
 export const HeaderWrapper = styled.header`
   top: 0;
   position: sticky;
-  overflow: hidden;
   display: flex;
   align-items: center;
   background-color: var(--background-color);
@@ -16,6 +15,10 @@ export const HeaderWrapper = styled.header`
   padding-top: env(safe-area-inset-top);
   padding-bottom: 0;
   z-index: 10;
+
+  button > div {
+    -webkit-tap-highlight-color: transparent;
+  }
 
   @supports (backdrop-filter: blur(20px)) {
     backdrop-filter: blur(20px);

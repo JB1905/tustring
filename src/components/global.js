@@ -9,7 +9,7 @@ const Global = createGlobalStyle`
     --background-color: #fff;
 
     --radius-corners: 10px;
-    
+
     --wrapper-size: 62rem;
 
     @supports (backdrop-filter: blur(20px)) {
@@ -31,8 +31,8 @@ const Global = createGlobalStyle`
       color: #fff;
       background-color: #18191A;
 
-      --primary-color: #6e70f6;
-      ${"" /* --secondary-color: #8140b1; */}
+      --primary-color: #8284f5;
+      --secondary-color: #c984fa;
       --card-color: #242526;
       --border-color: #fff2;
       --background-color: #242526;
@@ -43,10 +43,9 @@ const Global = createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
-    ${
-      "" /* -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; */
-    }
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   a {

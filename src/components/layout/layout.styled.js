@@ -4,7 +4,10 @@ import { limitedArea } from "../../mixins"
 
 export const Page = styled.div`
   display: flex;
-  min-height: 100vh;
+  min-height: 100%;
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
   flex-direction: column;
 `
 

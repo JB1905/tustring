@@ -15,7 +15,7 @@ const Post = ({ data }) => {
           <Link to={data.fields.slug}>{title}</Link>
         </Title>
         <small>{data.frontmatter.date}</small> &bull; ☕️{" "}
-        {data.fields.readingTime.text}
+        {data.fields.readingTime.minutes}
       </header>
 
       <section>

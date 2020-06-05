@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import {
   faGithub,
@@ -7,6 +7,8 @@ import {
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons"
 import GitHubButton from "react-github-btn"
+
+import { ThemeContext } from "../../context"
 
 import {
   Wrapper,
@@ -17,6 +19,8 @@ import {
 } from "./bio.styled"
 
 const Bio = () => {
+  const [theme] = useContext(ThemeContext)
+
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
@@ -59,11 +63,10 @@ const Bio = () => {
 
         <GitHubButton
           href="https://github.com/JB1905"
-          // data-color-scheme={theme === "dark" ? "dark" : "light"}
+          data-color-scheme={theme === "dark" ? "dark" : "light"}
           data-size="large"
           data-show-count="true"
           aria-label="Follow @JB1905 on GitHub"
-          // style={{ height: 28 }}
         >
           Follow @JB1905
         </GitHubButton>

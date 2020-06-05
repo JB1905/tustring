@@ -5,6 +5,6 @@ export const Wrapper = styled.article`
   padding: 20px 0;
 `
 
-export const Title = styled.h3`
+export const Title = styled.h2`
   margin-bottom: 0;
 `

@@ -72,7 +72,7 @@ const Bio = () => {
           data-color-scheme={theme === "dark" ? "dark" : "light"}
           data-size="large"
           data-show-count="true"
-          aria-label="Follow @JB1905 on GitHub"
+          aria-label="Obserwuj @JB1905 na GitHubie"
         >
           Follow @JB1905
         </GitHubButton>

@@ -42,7 +42,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <header>
           <h1>{post.frontmatter.title}</h1>
 
-          <p>{formatPostDate(post.frontmatter.date, "pl")}</p>
+          <span>{formatPostDate(post.frontmatter.date, "pl")}</span>
         </header>
 
         <section dangerouslySetInnerHTML={{ __html: post.html }} />

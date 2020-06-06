@@ -6,6 +6,8 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import { formatPostDate } from "../helpers"
+
 const Footer = styled.footer`
   margin-top: 50px;
 `
@@ -40,7 +42,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <header>
           <h1>{post.frontmatter.title}</h1>
 
-          <p>{post.frontmatter.date}</p>
+          <p>{formatPostDate(post.frontmatter.date, "pl")}</p>
         </header>
 
         <section dangerouslySetInnerHTML={{ __html: post.html }} />

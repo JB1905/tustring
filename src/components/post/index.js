@@ -14,8 +14,11 @@ const Post = ({ data, isLastItem = false }) => {
         <Title>
           <Link to={data.fields.slug}>{title}</Link>
         </Title>
-        {formatPostDate(data.frontmatter.date, "pl")} &bull;{" "}
-        {formatReadingTime(Math.ceil(data.fields.readingTime.minutes))}
+
+        <p>
+          {formatPostDate(data.frontmatter.date, "pl")} &bull;{" "}
+          {formatReadingTime(Math.ceil(data.fields.readingTime.minutes))}
+        </p>
       </header>
 
       <section>

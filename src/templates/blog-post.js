@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import styled from "styled-components"
+import { DiscussionEmbed } from "disqus-react"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -31,18 +32,25 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
   const { previous, next } = pageContext
 
+  const { title, description, date, tags, category } = post.frontmatter
+
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
+      <SEO title={title} description={description || post.excerpt} />
 
       <article>
         <header>
-          <h1>{post.frontmatter.title}</h1>
+          <h1>{title}</h1>
 
-          <span>{formatPostDate(post.frontmatter.date, "pl")}</span>
+          <span>{formatPostDate(date, "pl")}</span>
+
+          <div>
+            {tags?.map(tag => (
+              <Link to={`/tags/${tag}`}>{tag}</Link>
+            ))}
+
+            {category && <Link to={`/categories/${category}`}>{category}</Link>}
+          </div>
         </header>
 
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -51,6 +59,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <Bio />
         </Footer>
       </article>
+
+      <DiscussionEmbed />
 
       <Pagination>
         <ul>
@@ -91,6 +101,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        tags
+        category
         date(formatString: "MMMM DD, YYYY")
         description
       }

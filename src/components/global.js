@@ -9,7 +9,6 @@ const Global = createGlobalStyle`
     --background-color: #fff;
 
     --radius-corners: 10px;
-
     --wrapper-size: 62rem;
 
     @supports (backdrop-filter: blur(20px)) {
@@ -25,7 +24,7 @@ const Global = createGlobalStyle`
     margin: 0;
     min-width: 320px;
     font-family: "Nunito", sans-serif;
-    font-size: 16px;
+    font-size: 1.6rem;
 
     &.dark {
       color: #fff;
@@ -49,8 +48,6 @@ const Global = createGlobalStyle`
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-    // -webkit-tap-highlight-color: transparent;
   }
 
   a {

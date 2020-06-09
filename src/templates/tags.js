@@ -37,22 +37,7 @@ export const pageQuery = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
-      totalCount
-      edges {
-        node {
-          fields {
-            slug
-            readingTime {
-              minutes
-            }
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
-      }
+      ...BlogPost
     }
   }
 `

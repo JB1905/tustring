@@ -33,3 +33,24 @@ const Post = ({ data, isLastItem = false }) => {
 }
 
 export default Post
+
+export const query = graphql`
+  fragment BlogPost on MarkdownRemarkConnection {
+    edges {
+      node {
+        excerpt
+        fields {
+          slug
+          readingTime {
+            minutes
+          }
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          description
+        }
+      }
+    }
+  }
+`

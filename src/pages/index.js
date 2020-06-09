@@ -7,6 +7,8 @@ import Bio from "../components/bio"
 import SearchForm from "../components/search-form"
 import Post from "../components/post"
 
+import { isFeatureEnabled } from "../../features"
+
 const BlogIndex = ({ data, location }) => {
   const allPosts = data.allMarkdownRemark.edges
 
@@ -23,18 +25,9 @@ const BlogIndex = ({ data, location }) => {
     const posts = data.allMarkdownRemark.edges || []
 
     const filteredData = posts.filter(post => {
-      const { description, title, tags, category } = post.node.frontmatter
+      const { title } = post.node.frontmatter
 
-      return (
-        // description.toLowerCase().includes(query.toLowerCase()) ||
-        title.toLowerCase().includes(query.toLowerCase())
-        // ||
-        // category.toLowerCase().includes(query.toLowerCase()) ||
-        // tags
-        //   .join("")
-        //   .toLowerCase()
-        //   .includes(query.toLowerCase())
-      )
+      return title.toLowerCase().includes(query.toLowerCase())
     })
 
     setState({
@@ -53,15 +46,15 @@ const BlogIndex = ({ data, location }) => {
 
       <Bio />
 
-      {/*<div
- // style={{backgroundColor: '#000'}}
- >
-      <SearchForm
-        // minLength={2}
-        debounceTimeout={300}
-        onChange={handleInputChange}
-        placeholder="Szukaj..."
-      /></div>*/}
+      {isFeatureEnabled("filters") && <div>Filtry</div>}
+
+      {isFeatureEnabled("searchForm") && (
+        <SearchForm
+          debounceTimeout={300}
+          onChange={handleInputChange}
+          placeholder="Szukaj..."
+        />
+      )}
 
       {posts.length > 0 ? (
         posts.map(({ node }, index) => (
@@ -92,22 +85,7 @@ export default BlogIndex
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-            readingTime {
-              minutes
-            }
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
-      }
+      ...BlogPost
     }
   }
 `

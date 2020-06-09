@@ -5,7 +5,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
-  const tagTemplate = path.resolve("src/templates/tags.js")
 
   const result = await graphql(
     `
@@ -23,11 +22,6 @@ exports.createPages = async ({ graphql, actions }) => {
                 title
               }
             }
-          }
-        }
-        categoryGroup: allMarkdownRemark(limit: 2000) {
-          group(field: frontmatter___category) {
-            fieldValue
           }
         }
         tagsGroup: allMarkdownRemark(limit: 2000) {

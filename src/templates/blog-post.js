@@ -9,6 +9,8 @@ import SEO from "../components/seo"
 
 import { formatPostDate } from "../helpers"
 
+import { isFeatureEnabled } from "../../features"
+
 const Footer = styled.footer`
   margin-top: 50px;
 `
@@ -32,7 +34,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
   const { previous, next } = pageContext
 
-  const { title, description, date, tags, category } = post.frontmatter
+  const { title, description, date, tags } = post.frontmatter
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -44,13 +46,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
           <span>{formatPostDate(date, "pl")}</span>
 
-          <div>
-            {tags?.map(tag => (
-              <Link to={`/tags/${tag}`}>{tag}</Link>
-            ))}
-
-            {category && <Link to={`/categories/${category}`}>{category}</Link>}
-          </div>
+          {isFeatureEnabled("tags") && (
+            <div>
+              {tags?.map(tag => (
+                <Link to={`/tags/${tag}`}>{tag}</Link>
+              ))}
+            </div>
+          )}
         </header>
 
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -60,7 +62,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </Footer>
       </article>
 
-      <DiscussionEmbed />
+      {isFeatureEnabled("comments") && <DiscussionEmbed />}
 
       <Pagination>
         <ul>
@@ -102,7 +104,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         tags
-        category
         date(formatString: "MMMM DD, YYYY")
         description
       }

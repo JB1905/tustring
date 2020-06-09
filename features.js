@@ -5,8 +5,10 @@ const featureFlags = {
   comments: false,
   ssr: false,
   sources: false,
+  fixedPWAiOS: false,
   updatedThemeSwitch: false,
   footerOpenSource: false,
+  fixedGithubBadge: false,
 }
 
 export const isFeatureEnabled = name => featureFlags[name]

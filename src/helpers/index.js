@@ -1,4 +1,4 @@
-export const formatReadingTime = (minutes) => {
+export const formatReadingTime = minutes => {
   const cups = Math.round(minutes / 5)
 
   if (cups > 5) {

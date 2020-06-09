@@ -5,7 +5,8 @@ const featureFlags = {
   comments: false,
   ssr: false,
   sources: false,
-  updatedThemeSwitch: false
+  updatedThemeSwitch: false,
+  footerOpenSource: false,
 }
 
 export const isFeatureEnabled = name => featureFlags[name]

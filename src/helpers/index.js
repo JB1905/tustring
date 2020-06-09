@@ -1,5 +1,5 @@
-export function formatReadingTime(minutes) {
-  let cups = Math.round(minutes / 5)
+export const formatReadingTime = (minutes) => {
+  const cups = Math.round(minutes / 5)
 
   if (cups > 5) {
     return `${new Array(Math.round(cups / Math.E))
@@ -12,7 +12,7 @@ export function formatReadingTime(minutes) {
   }
 }
 
-export function formatPostDate(date, lang) {
+export const formatPostDate = (date, lang) => {
   if (typeof Date.prototype.toLocaleDateString !== "function") {
     return date
   }

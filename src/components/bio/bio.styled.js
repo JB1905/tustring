@@ -51,6 +51,11 @@ export const Content = styled.p`
   margin-top: 0;
 `
 
+export const BadgeWrapper = styled.span`
+  height: 34px;
+  display: block;
+`
+
 export const SocialMedia = styled.div`
   height: 30px;
 

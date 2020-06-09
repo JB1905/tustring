@@ -15,6 +15,7 @@ import {
   Profile,
   AuthorPic,
   Content,
+  BadgeWrapper,
   SocialMedia,
   SocialMediaIcon,
 } from "./bio.styled"
@@ -67,15 +68,17 @@ const Bio = () => {
           <strong>{author.name}</strong>
         </a>
 
-        <GitHubButton
-          href="https://github.com/JB1905"
-          data-color-scheme={theme === "dark" ? "dark" : "light"}
-          data-size="large"
-          data-show-count="true"
-          aria-label="Obserwuj @JB1905 na GitHubie"
-        >
-          Follow @JB1905
-        </GitHubButton>
+        <BadgeWrapper>
+          <GitHubButton
+            href="https://github.com/JB1905"
+            data-color-scheme={theme === "dark" ? "dark" : "light"}
+            data-size="large"
+            data-show-count="true"
+            aria-label="Obserwuj @JB1905 na GitHubie"
+          >
+            Follow @JB1905
+          </GitHubButton>
+        </BadgeWrapper>
 
         <span>{author.summary}</span>
       </Content>

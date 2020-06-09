@@ -11,6 +11,8 @@ const Header = ({ location, title }) => {
 
   const [theme, setTheme] = useContext(ThemeContext)
 
+  console.log(theme)
+
   return (
     <HeaderWrapper>
       <HeaderContent>

@@ -1,11 +1,15 @@
 import styled from "styled-components"
 import { DebounceInput } from "react-debounce-input"
 
-const SearchForm = styled(DebounceInput)`
+export const Wrapper = styled.div`
+  padding: 8px 0;
+  position: sticky;
+  top: 60px;
+`
+
+export const SearchField = styled(DebounceInput)`
   font-family: inherit;
   width: 100%;
-  position: sticky;
-  top: 65px;
   padding: 8px 14px;
   font-size: 2rem;
   color: var(--text-color);
@@ -14,5 +18,3 @@ const SearchForm = styled(DebounceInput)`
   border: 1px solid var(--border-color);
   -webkit-appearance: none;
 `
-
-export default SearchForm

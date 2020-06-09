@@ -27,14 +27,18 @@ const Global = createGlobalStyle`
     font-size: 1.6rem;
 
     &.dark {
-      color: #fff;
-      background-color: #18191A;
-
       --primary-color: #8284f5;
       --secondary-color: #c984fa;
       --card-color: #242526;
       --border-color: #fff2;
       --background-color: #242526;
+
+      // @supports (backdrop-filter: blur(20px)) {
+      //   --background-color: #fffd;
+      // }
+
+      color: #fff;
+      background-color: #18191A;
 
       img {
         filter: grayscale(0.2) brightness(0.8);

@@ -14,6 +14,8 @@ export const Page = styled.div`
 export const Main = styled.main`
   ${limitedArea}
   flex: 1;
+  display: flex;
+  flex-direction: column;
 `
 
 export const Footer = styled.footer`

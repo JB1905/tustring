@@ -27,6 +27,23 @@ const Pagination = styled.nav`
   }
 `
 
+const TagList = styled.ul`
+  display: flex;
+  padding: 0;
+  list-style: none;
+`
+
+const TagItem = styled.li`
+  border: 1px solid var(--border-color);
+  margin-right: 4px;
+  border-radius: var(--radius-corners);
+
+  a {
+    padding: 4px 12px;
+    display: inline-block;
+  }
+`
+
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
 
@@ -47,11 +64,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <span>{formatPostDate(date, "pl")}</span>
 
           {isFeatureEnabled("tags") && (
-            <div>
+            <TagList>
               {tags?.map(tag => (
-                <Link to={`/tags/${tag}`}>{tag}</Link>
+                <TagItem>
+                  <Link to={`/tags/${tag}`}>{tag}</Link>
+                </TagItem>
               ))}
-            </div>
+            </TagList>
           )}
         </header>
 
@@ -62,7 +81,17 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </Footer>
       </article>
 
-      {isFeatureEnabled("comments") && <DiscussionEmbed />}
+      {isFeatureEnabled("comments") && (
+        <DiscussionEmbed
+          // shortname="tu-string"
+          config={{
+            url: "http://localhost:8000",
+            identifier: title,
+            title: title,
+            language: "pl_PL",
+          }}
+        />
+      )}
 
       <Pagination>
         <ul>

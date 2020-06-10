@@ -83,11 +83,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
       {isFeatureEnabled("comments") && (
         <DiscussionEmbed
-          // shortname="tu-string"
+          shortname="tu-string"
           config={{
+            title,
             url: "http://localhost:8000",
             identifier: title,
-            title: title,
             language: "pl_PL",
           }}
         />

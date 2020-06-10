@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -9,8 +10,18 @@ import Post from "../components/post"
 
 import { isFeatureEnabled } from "../../features"
 
+const NoResults = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+`
+
 const BlogIndex = ({ data, location }) => {
   const allPosts = data.allMarkdownRemark.edges
+
+  const categories = data.categories.group
 
   const emptyQuery = ""
 
@@ -46,7 +57,13 @@ const BlogIndex = ({ data, location }) => {
 
       <Bio />
 
-      {isFeatureEnabled("filters") && <div>Filtry</div>}
+      {isFeatureEnabled("filters") && (
+        <div>
+          {categories.map(({ fieldValue }) => (
+            <p>{fieldValue}</p>
+          ))}
+        </div>
+      )}
 
       {isFeatureEnabled("searchForm") && (
         <SearchForm
@@ -65,16 +82,9 @@ const BlogIndex = ({ data, location }) => {
           />
         ))
       ) : (
-        <div
-          style={{
-            flex: 1,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+        <NoResults>
           <h3>Nie znaleziono artykułów</h3>
-        </div>
+        </NoResults>
       )}
     </Layout>
   )
@@ -86,6 +96,12 @@ export const pageQuery = graphql`
   query {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       ...BlogPost
+    }
+
+    categories: allMarkdownRemark(limit: 2000) {
+      group(field: frontmatter___category) {
+        fieldValue
+      }
     }
   }
 `

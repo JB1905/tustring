@@ -3,8 +3,8 @@ const featureFlags = {
   comments: false,
   tags: false,
   searchForm: false,
-
   filters: false,
+
   fixedPWAiOS: false,
   // sources: false,
   // updatedThemeSwitch: false,

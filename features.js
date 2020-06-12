@@ -4,10 +4,9 @@ const featureFlags = {
   tags: false,
   searchForm: false,
   filters: false,
-
   fixedPWAiOS: false,
-  // sources: false,
-  // updatedThemeSwitch: false,
+  sources: false,
+  updatedThemeSwitch: false,
 }
 
 export const isFeatureEnabled = name => featureFlags[name]

@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Wrapper, SearchField } from "./search-form.styled"
+import { Wrapper, SearchField } from "./search-form.styles"
 
 const SearchForm = ({ ...props }) => (
   <Wrapper>

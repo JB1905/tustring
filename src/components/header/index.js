@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 import { ThemeContext } from "../../context"
 
-import { HeaderWrapper, HeaderContent, Title } from "./header.styled"
+import { HeaderWrapper, HeaderContent, Title } from "./header.styles"
 
 const Header = ({ location, title }) => {
   const rootPath = `${__PATH_PREFIX__}/`

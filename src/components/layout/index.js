@@ -7,7 +7,7 @@ import { ThemeProvider } from "../../context"
 
 import Header from "../header"
 
-import { Page, Main, Footer } from "./layout.styled"
+import { Page, Main, Footer } from "./layout.styles"
 
 import { isFeatureEnabled } from "../../../features"
 

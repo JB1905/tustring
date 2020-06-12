@@ -2,8 +2,6 @@ import Image from "gatsby-image"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-import { AUTHOR_PIC_SIZE } from "../../constants"
-
 export const Wrapper = styled.div`
   display: flex;
   text-align: center;
@@ -26,8 +24,8 @@ export const Profile = styled.div`
 
   ::before {
     content: "";
-    width: ${AUTHOR_PIC_SIZE + 8}px;
-    height: ${AUTHOR_PIC_SIZE + 8}px;
+    width: calc(var(--author-pic-size) + 8px);
+    height: calc(var(--author-pic-size) + 8px);
     position: absolute;
     background-image: url(https://raw.githubusercontent.com/JB1905/portfolio/master/src/images/trianglify.svg);
     background-size: cover;
@@ -38,8 +36,8 @@ export const Profile = styled.div`
 `
 
 export const AuthorPic = styled(Image)`
-  min-width: ${AUTHOR_PIC_SIZE}px;
-  height: ${AUTHOR_PIC_SIZE}px;
+  min-width: var(--author-pic-size);
+  height: var(--author-pic-size);
 
   img {
     border-radius: 50%;

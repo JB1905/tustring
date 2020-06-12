@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import { formatPostDate, formatReadingTime } from "../../helpers"
 
-import { Wrapper, Title } from "./post.styled"
+import { Wrapper, Title } from "./post.styles"
 
 const Post = ({ data, isLastItem = false }) => {
   const title = data.frontmatter.title || data.fields.slug

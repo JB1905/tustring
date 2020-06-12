@@ -4,14 +4,14 @@ import { DebounceInput } from "react-debounce-input"
 export const Wrapper = styled.div`
   padding: 8px 0;
   position: sticky;
-  top: 60px;
+  top: px;
 `
 
 export const SearchField = styled(DebounceInput)`
   font-family: inherit;
   width: 100%;
   padding: 8px 14px;
-  font-size: 2rem;
+  font-size: var(--font-size-md);
   color: var(--text-color);
   background-color: var(--card-color);
   border-radius: var(--radius-corners);

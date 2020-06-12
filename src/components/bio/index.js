@@ -18,7 +18,7 @@ import {
   BadgeWrapper,
   SocialMedia,
   SocialMediaIcon,
-} from "./bio.styled"
+} from "./bio.styles"
 
 const Bio = () => {
   const [theme] = useContext(ThemeContext)

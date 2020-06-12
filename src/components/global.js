@@ -1,18 +1,33 @@
 import { createGlobalStyle } from "styled-components"
 
+import { AUTHOR_PIC_SIZE, HEADER_HEIGHT } from "../constants"
+
 const Global = createGlobalStyle`
   :root {
     --primary-color: #2d2faf;
     --secondary-color: #8140b1;
+    --text-color: #000;
     --card-color: #f8f8f8;
     --border-color: #0001;
-    --background-color: #fff;
+    --nav-color: #fff;
+    --page-color: #fff;
 
     --radius-corners: 10px;
     --wrapper-size: 62rem;
 
-    @supports (backdrop-filter: blur(20px)) {
-      --background-color: #fffd;
+    --font-size: 1.6rem;
+    --font-size-md: 2rem;
+    --font-size-lg: 3.4rem;
+
+    --font-family-body: "Nunito", sans-serif;
+
+    --blur-filter: blur(20px);
+
+    --author-pic-size: ${AUTHOR_PIC_SIZE}px;
+    --header-height: ${HEADER_HEIGHT}px;
+
+    @supports (backdrop-filter: var(--blur-filter)) {
+      --nav-color: #fffd;
     }
   }
 
@@ -23,27 +38,29 @@ const Global = createGlobalStyle`
   body {
     margin: 0;
     min-width: 320px;
-    font-family: "Nunito", sans-serif;
-    font-size: 1.6rem;
+    font-family: var(--font-family-body);
+    font-size: var(--font-size);
 
     &.dark {
       --primary-color: #8284f5;
       --secondary-color: #c984fa;
+      --text-color: #fff;
       --card-color: #242526;
       --border-color: #fff2;
-      --background-color: #242526;
+      --nav-color: #242526;
+      --page-color: #18191A;
 
-      // @supports (backdrop-filter: blur(20px)) {
-      //   --background-color: #fffd;
-      // }
-
-      color: #fff;
-      background-color: #18191A;
+      @supports (backdrop-filter: var(--blur-filter)) {
+        --nav-color: #fffd;
+      }
 
       img {
         filter: grayscale(0.2) brightness(0.8);
       }
     }
+
+    color: var(--text-color);
+    background-color: var(--page-color);
   }
 
   *,

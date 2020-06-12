@@ -51,7 +51,7 @@ const Global = createGlobalStyle`
       --page-color: #18191A;
 
       @supports (backdrop-filter: var(--blur-filter)) {
-        --nav-color: #fffd;
+        --nav-color: #242526dd;
       }
 
       img {

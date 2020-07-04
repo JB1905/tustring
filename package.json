@@ -41,7 +41,7 @@
     "gatsby-transformer-sharp": "^2.5.10",
     "prismjs": "^1.20.0",
     "react": "^16.13.1",
-    "react-dark-mode-toggle": "^0.0.6",
+    "react-dark-mode-toggle": "0.0.5",
     "react-debounce-input": "^3.2.2",
     "react-dom": "^16.13.1",
     "react-github-btn": "^1.2.0",

@@ -27,7 +27,7 @@ export const Profile = styled.div`
     width: calc(var(--author-pic-size) + 8px);
     height: calc(var(--author-pic-size) + 8px);
     position: absolute;
-    background-image: url(https://raw.githubusercontent.com/JB1905/portfolio/master/src/images/trianglify.svg);
+    background-image: url("/trianglify.svg");
     background-size: cover;
     margin-left: -4px;
     margin-top: -4px;
@@ -68,6 +68,10 @@ export const SocialMedia = styled.div`
 
     :hover {
       transform: scale(1.2);
+    }
+
+    svg {
+      max-width: 1em;
     }
   }
 `

@@ -40,6 +40,11 @@ const Layout = ({ location, children }) => {
               <a href="https://github.com/JB1905/tu-string/">Open Source</a>!
             </>
           )}
+          {isFeatureEnabled("feed") && (
+            <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
+              RSS
+            </a>
+          )}
         </Footer>
 
         <Global />

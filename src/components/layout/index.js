@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Global from "../global"
+import Global from "../../styles/global"
 
 import { ThemeProvider } from "../../context"
 

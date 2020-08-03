@@ -3,7 +3,7 @@ const featureFlags = {
   comments: false,
   tags: false,
   searchForm: false,
-  filters: false,
+  filters: true,
   fixedPWAiOS: false,
   sources: false,
   updatedThemeSwitch: false,

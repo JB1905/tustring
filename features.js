@@ -1,6 +1,6 @@
 const featureFlags = {
   footerOpenSource: false,
-  comments: false,
+  comments: true,
   tags: false,
   searchForm: false,
   filters: false,
@@ -8,8 +8,8 @@ const featureFlags = {
   sources: false,
   updatedThemeSwitch: false,
   feed: false,
-}
+};
 
-export const isFeatureEnabled = name => featureFlags[name]
-export const setFeature = (name, status) => (featureFlags[name] = status)
-export const getAll = () => featureFlags
+export const isFeatureEnabled = (name) => featureFlags[name];
+export const setFeature = (name, status) => (featureFlags[name] = status);
+export const getAll = () => featureFlags;

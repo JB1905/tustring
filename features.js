@@ -7,7 +7,7 @@ const featureFlags = {
   fixedPWAiOS: false,
   sources: false,
   updatedThemeSwitch: false,
-  feed: false,
+  feed: true,
 }
 
 export const isFeatureEnabled = name => featureFlags[name]

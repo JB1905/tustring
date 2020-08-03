@@ -5,7 +5,7 @@ const featureFlags = {
   searchForm: false,
   filters: false,
   fixedPWAiOS: false,
-  sources: false,
+  sources: true,
   updatedThemeSwitch: false,
   feed: false,
 }

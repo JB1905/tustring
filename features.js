@@ -4,7 +4,7 @@ const featureFlags = {
   tags: false,
   searchForm: false,
   filters: false,
-  fixedPWAiOS: false,
+  fixedPWAiOS: true,
   sources: false,
   updatedThemeSwitch: false,
   feed: false,

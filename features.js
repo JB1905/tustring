@@ -2,7 +2,7 @@ const featureFlags = {
   footerOpenSource: false,
   comments: false,
   tags: false,
-  searchForm: false,
+  searchForm: true,
   filters: false,
   fixedPWAiOS: false,
   sources: false,

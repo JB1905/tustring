@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Wrapper = styled.article`
+export const Wrapper = styled.article<{ isLastItem: boolean }>`
   padding: 20px 0;
 
   ${({ isLastItem }) =>

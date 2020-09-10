@@ -11,7 +11,12 @@ import { Page, Main, Footer } from "./layout.styles"
 
 import { isFeatureEnabled } from "../../../features"
 
-const Layout = ({ location, children }) => {
+interface Props {
+  readonly title: string // TODO
+  readonly location: Location // TODO
+}
+
+const Layout: React.FC<Props> = ({ children, location }) => {
   const { site } = useStaticQuery(
     graphql`
       query {

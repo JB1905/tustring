@@ -1,6 +1,15 @@
-import React from "react"
+import React, { HTMLAttributes } from "react"
 
-const HTML = props => (
+interface Props {
+  readonly htmlAttributes: HTMLAttributes<HTMLHtmlElement>
+  readonly headComponents: HTMLHeadElement
+  readonly bodyAttributes: HTMLAttributes<HTMLBodyElement>
+  readonly preBodyComponents: HTMLElement
+  readonly body: string
+  readonly postBodyComponents: HTMLElement
+}
+
+const HTML: React.FC<Props> = props => (
   <html {...props.htmlAttributes}>
     <head>
       <meta charSet="utf-8" />

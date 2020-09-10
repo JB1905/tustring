@@ -2,7 +2,7 @@ import React from "react"
 
 import { Wrapper, SearchField } from "./search-form.styles"
 
-const SearchForm = ({ ...props }) => (
+const SearchForm: React.FC = props => (
   <Wrapper>
     <SearchField {...props} />
   </Wrapper>

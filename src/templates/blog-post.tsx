@@ -5,7 +5,7 @@ import { DiscussionEmbed } from "disqus-react"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+// import SEO from "../components/seo"
 
 import { formatPostDate } from "../helpers"
 
@@ -44,7 +44,13 @@ const TagItem = styled.li`
   }
 `
 
-const BlogPostTemplate = ({ data, pageContext, location }) => {
+interface Props {
+  readonly data: any
+  readonly pageContext: any
+  readonly location: any
+}
+
+const BlogPostTemplate: React.FC<Props> = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
 
   const siteTitle = data.site.siteMetadata.title
@@ -55,7 +61,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title={title} description={description || post.excerpt} />
+      {/* <SEO title={title} description={description || post.excerpt} /> */}
 
       <article>
         <header>

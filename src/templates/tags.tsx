@@ -4,7 +4,13 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Post from "../components/post"
 
-const Tags = ({ pageContext, data, location }) => {
+interface Props {
+  readonly pageContext: any //TODO
+  readonly data: any // TODO
+  readonly location: Location // TODO
+}
+
+const Tags: React.FC<Props> = ({ pageContext, data, location }) => {
   const { tag } = pageContext
 
   const { edges, totalCount } = data.allMarkdownRemark
@@ -28,7 +34,7 @@ const Tags = ({ pageContext, data, location }) => {
   )
 }
 
-export default Tags
+export default Tags // TODO move to bottom???
 
 export const pageQuery = graphql`
   query($tag: String) {

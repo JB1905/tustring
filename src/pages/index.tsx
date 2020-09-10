@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+// import SEO from "../components/seo"
 import Bio from "../components/bio"
 import SearchForm from "../components/search-form"
 import Post from "../components/post"
@@ -18,7 +18,12 @@ const NoResults = styled.div`
   min-height: 140px;
 `
 
-const BlogIndex = ({ data, location }) => {
+interface Props {
+  readonly data: any // TODO
+  readonly location: Location // TODO
+}
+
+const BlogIndex: React.FC<Props> = ({ data, location }) => {
   const allPosts = data.allMarkdownRemark.edges
 
   const categories = data.categories.group
@@ -30,12 +35,12 @@ const BlogIndex = ({ data, location }) => {
     query: emptyQuery,
   })
 
-  const handleInputChange = event => {
+  const handleInputChange = (event: any) => {
     const query = event.target.value
 
     const posts = data.allMarkdownRemark.edges || []
 
-    const filteredData = posts.filter(post => {
+    const filteredData = posts.filter((post: any) => {
       const { title } = post.node.frontmatter
 
       return title.toLowerCase().includes(query.toLowerCase())
@@ -53,7 +58,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <SEO title="Najnowsze" />
+      {/* <SEO title="Najnowsze" /> */}
 
       <Bio />
 
@@ -67,6 +72,8 @@ const BlogIndex = ({ data, location }) => {
 
       {isFeatureEnabled("searchForm") && (
         <SearchForm
+          //TODO
+          // @ts-ignore
           debounceTimeout={300}
           onChange={handleInputChange}
           placeholder="Szukaj..."

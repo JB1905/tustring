@@ -5,7 +5,12 @@ import { formatPostDate, formatReadingTime } from "../../helpers"
 
 import { Wrapper, Title } from "./post.styles"
 
-const Post = ({ data, isLastItem = false }) => {
+interface Props {
+  readonly data: any // TODO
+  readonly isLastItem: boolean
+}
+
+const Post: React.FC<Props> = ({ data, isLastItem = false }) => {
   const title = data.frontmatter.title || data.fields.slug
 
   return (

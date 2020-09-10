@@ -1,4 +1,4 @@
-export const formatReadingTime = minutes => {
+export const formatReadingTime = (minutes: number) => {
   const cups = Math.round(minutes / 5)
 
   if (cups > 5) {
@@ -12,17 +12,19 @@ export const formatReadingTime = minutes => {
   }
 }
 
-export const formatPostDate = (date, lang) => {
+// TODO types
+export const formatPostDate = (date: Date, lang: string) => {
   if (typeof Date.prototype.toLocaleDateString !== "function") {
     return date
   }
 
   date = new Date(date)
 
-  const args = [
+  const args: any = [
     lang,
     { day: "numeric", month: "long", year: "numeric" },
   ].filter(Boolean)
 
+  // TODO
   return date.toLocaleDateString(...args)
 }

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react"
 
-export const ThemeContext = React.createContext({})
+export const ThemeContext = React.createContext<
+  [string, React.Dispatch<React.SetStateAction<string>>]
+>([undefined, () => null])
 
-export const ThemeProvider = ({ children }) => {
+export const ThemeProvider: React.FC = ({ children }) => {
   const [theme, setTheme] = useState(
     typeof window !== "undefined"
       ? window.localStorage.getItem("theme")

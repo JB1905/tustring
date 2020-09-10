@@ -20,7 +20,7 @@ import {
   SocialMediaIcon,
 } from "./bio.styles"
 
-const Bio = () => {
+const Bio: React.FC = () => {
   const [theme] = useContext(ThemeContext)
 
   const data = useStaticQuery(graphql`
@@ -58,6 +58,8 @@ const Bio = () => {
     <Wrapper>
       <Profile>
         <AuthorPic
+          // TODO
+          // @ts-ignore
           fixed={data.avatar.childImageSharp.fixed}
           alt={author.name}
         />
@@ -73,7 +75,7 @@ const Bio = () => {
             href="https://github.com/JB1905"
             data-color-scheme={theme === "dark" ? "dark" : "light"}
             data-size="large"
-            data-show-count="true"
+            data-show-count={true}
             aria-label="Obserwuj @JB1905 na GitHubie"
           >
             Follow @JB1905
@@ -84,6 +86,7 @@ const Bio = () => {
       </Content>
 
       <SocialMedia>
+        {/* TODO replace with map */}
         <a href={social.linkedin} aria-label="LinkedIn">
           <SocialMediaIcon icon={faLinkedin} />
         </a>

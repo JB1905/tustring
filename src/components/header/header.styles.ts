@@ -1,6 +1,6 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
-import { limitedArea } from "../../styles/mixins"
+import { limitedArea } from '../../styles/mixins'
 
 export const HeaderWrapper = styled.header`
   top: 0;

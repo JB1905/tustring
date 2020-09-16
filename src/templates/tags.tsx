@@ -1,8 +1,8 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import Layout from "../components/layout"
-import Post from "../components/post"
+import Layout from '../components/layout'
+import Post from '../components/post'
 
 interface Props {
   readonly pageContext: any //TODO
@@ -16,7 +16,7 @@ const Tags: React.FC<Props> = ({ pageContext, data, location }) => {
   const { edges, totalCount } = data.allMarkdownRemark
 
   const tagHeader = `${totalCount} artykuł${
-    totalCount === 1 ? "" : "y"
+    totalCount === 1 ? '' : 'y'
   } z oznaczeniem: "${tag}"`
 
   return (

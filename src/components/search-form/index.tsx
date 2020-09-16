@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react'
 
-import { Wrapper, SearchField } from "./search-form.styles"
+import { Wrapper, SearchField } from './search-form.styles'
 
 const SearchForm: React.FC = props => (
   <Wrapper>

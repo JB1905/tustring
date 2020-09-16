@@ -1,16 +1,22 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
 
 interface Props {
   readonly description?: string
-  readonly lang?: string // TODO
+  readonly lang?: string
   readonly meta?: HTMLMetaElement
-  // readonly keywords?: string[]
-  readonly title?: string
+  readonly keywords?: string[]
+  readonly title: string
 }
 
-const SEO: React.FC<Props> = ({ description, lang = "en", meta, title }) => {
+const SEO: React.FC<Props> = ({
+  description = '',
+  lang = 'pl',
+  meta = [],
+  // keywords = [],
+  title,
+}) => {
   const { site } = useStaticQuery<any>(query)
 
   const metaDescription = description || site.siteMetadata.description
@@ -20,6 +26,7 @@ const SEO: React.FC<Props> = ({ description, lang = "en", meta, title }) => {
       title={title}
       titleTemplate={`${site.siteMetadata.title} | %s`}
       htmlAttributes={{ lang }}
+      // keywords={keywords}
       meta={[
         {
           name: `description`,
@@ -70,18 +77,5 @@ export const query = graphql`
     }
   }
 `
-
-// SEO.defaultProps = {
-//   lang: `en`,
-//   meta: [],
-//   description: ``,
-// }
-
-// SEO.propTypes = {
-//   description: PropTypes.string,
-//   lang: PropTypes.string,
-//   meta: PropTypes.arrayOf(PropTypes.object),
-//   title: PropTypes.string.isRequired,
-// }
 
 export default SEO

@@ -1,14 +1,14 @@
-import React, { useState } from "react"
-import { graphql } from "gatsby"
-import styled from "styled-components"
+import React, { useState } from 'react'
+import { graphql } from 'gatsby'
+import styled from 'styled-components'
 
-import Layout from "../components/layout"
+import Layout from '../components/layout'
 // import SEO from "../components/seo"
-import Bio from "../components/bio"
-import SearchForm from "../components/search-form"
-import Post from "../components/post"
+import Bio from '../components/bio'
+import SearchForm from '../components/search-form'
+import Post from '../components/post'
 
-import { isFeatureEnabled } from "../../features"
+import { isFeatureEnabled } from '../../features'
 
 const NoResults = styled.div`
   flex: 1;
@@ -28,7 +28,7 @@ const BlogIndex: React.FC<Props> = ({ data, location }) => {
 
   const categories = data.categories.group
 
-  const emptyQuery = ""
+  const emptyQuery = ''
 
   const [state, setState] = useState({
     filteredData: [],
@@ -62,7 +62,7 @@ const BlogIndex: React.FC<Props> = ({ data, location }) => {
 
       <Bio />
 
-      {isFeatureEnabled("filters") && (
+      {isFeatureEnabled('filters') && (
         <div>
           {categories.map(({ fieldValue }) => (
             <p>{fieldValue}</p>
@@ -70,7 +70,7 @@ const BlogIndex: React.FC<Props> = ({ data, location }) => {
         </div>
       )}
 
-      {isFeatureEnabled("searchForm") && (
+      {isFeatureEnabled('searchForm') && (
         <SearchForm
           //TODO
           // @ts-ignore

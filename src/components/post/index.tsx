@@ -1,9 +1,9 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 
-import { formatPostDate, formatReadingTime } from "../../helpers"
+import { formatPostDate, formatReadingTime } from '../../helpers'
 
-import { Wrapper, Title } from "./post.styles"
+import { Wrapper, Title } from './post.styles'
 
 interface Props {
   readonly data: any // TODO
@@ -21,7 +21,7 @@ const Post: React.FC<Props> = ({ data, isLastItem = false }) => {
         </Title>
 
         <span>
-          {formatPostDate(data.frontmatter.date, "pl")} &bull;{" "}
+          {formatPostDate(data.frontmatter.date, 'pl')} &bull;{' '}
           {formatReadingTime(Math.ceil(data.fields.readingTime.minutes))}
         </span>
       </header>

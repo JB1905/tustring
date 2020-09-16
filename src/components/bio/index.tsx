@@ -1,14 +1,14 @@
-import React, { useContext } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React, { useContext } from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import {
   faGithub,
   faLinkedin,
   faTwitter,
   faFacebook,
-} from "@fortawesome/free-brands-svg-icons"
-import GitHubButton from "react-github-btn"
+} from '@fortawesome/free-brands-svg-icons'
+import GitHubButton from 'react-github-btn'
 
-import { ThemeContext } from "../../context"
+import { ThemeContext } from '../../context'
 
 import {
   Wrapper,
@@ -18,7 +18,7 @@ import {
   BadgeWrapper,
   SocialMedia,
   SocialMediaIcon,
-} from "./bio.styles"
+} from './bio.styles'
 
 const Bio: React.FC = () => {
   const [theme] = useContext(ThemeContext)
@@ -73,7 +73,7 @@ const Bio: React.FC = () => {
         <BadgeWrapper>
           <GitHubButton
             href="https://github.com/JB1905"
-            data-color-scheme={theme === "dark" ? "dark" : "light"}
+            data-color-scheme={theme === 'dark' ? 'dark' : 'light'}
             data-size="large"
             data-show-count={true}
             aria-label="Obserwuj @JB1905 na GitHubie"

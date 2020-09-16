@@ -1,15 +1,15 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import styled from "styled-components"
-import { DiscussionEmbed } from "disqus-react"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
+import { DiscussionEmbed } from 'disqus-react'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-// import SEO from "../components/seo"
+import Bio from '../components/bio'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
-import { formatPostDate } from "../helpers"
+import { formatPostDate } from '../helpers'
 
-import { isFeatureEnabled } from "../../features"
+import { isFeatureEnabled } from '../../features'
 
 const Footer = styled.footer`
   margin-top: 50px;
@@ -61,15 +61,15 @@ const BlogPostTemplate: React.FC<Props> = ({ data, pageContext, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      {/* <SEO title={title} description={description || post.excerpt} /> */}
+      <SEO title={title} description={description || post.excerpt} />
 
       <article>
         <header>
           <h1>{title}</h1>
 
-          <span>{formatPostDate(date, "pl")}</span>
+          <span>{formatPostDate(date, 'pl')}</span>
 
-          {isFeatureEnabled("tags") && (
+          {isFeatureEnabled('tags') && (
             <TagList>
               {tags?.map(tag => (
                 <TagItem>
@@ -87,14 +87,14 @@ const BlogPostTemplate: React.FC<Props> = ({ data, pageContext, location }) => {
         </Footer>
       </article>
 
-      {isFeatureEnabled("comments") && (
+      {isFeatureEnabled('comments') && (
         <DiscussionEmbed
           shortname="tu-string"
           config={{
             title,
-            url: "http://localhost:8000",
+            url: 'http://localhost:8000',
             identifier: title,
-            language: "pl_PL",
+            language: 'pl_PL',
           }}
         />
       )}

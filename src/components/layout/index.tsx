@@ -1,18 +1,17 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
-import Global from "../../styles/global"
+import Global from '../../styles/global'
 
-import { ThemeProvider } from "../../context"
+import { ThemeProvider } from '../../context'
 
-import Header from "../header"
+import Header from '../header'
 
-import { Page, Main, Footer } from "./layout.styles"
+import { Page, Main, Footer } from './layout.styles'
 
-import { isFeatureEnabled } from "../../../features"
+import { isFeatureEnabled } from '../../../features'
 
 interface Props {
-  readonly title: string // TODO
   readonly location: Location // TODO
 }
 
@@ -37,15 +36,17 @@ const Layout: React.FC<Props> = ({ children, location }) => {
         <Main>{children}</Main>
 
         <Footer>
-          Zbudowane przy użyciu{" "}
+          Zbudowane przy użyciu{' '}
           <a href="https://www.gatsbyjs.org/">Gatsby.js</a>
-          {isFeatureEnabled("footerOpenSource") && (
+          
+          {isFeatureEnabled('footerOpenSource') && (
             <>
-              {", kod źródłowy dostępny "}
+              {', kod źródłowy dostępny '}
               <a href="https://github.com/JB1905/tu-string/">Open Source</a>!
             </>
           )}
-          {isFeatureEnabled("feed") && (
+
+          {isFeatureEnabled('feed') && (
             <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
               RSS
             </a>

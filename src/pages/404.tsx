@@ -15,7 +15,7 @@ const NotFoundPage: React.FC<Props> = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="404: Not Found" />
+      {/* <SEO title="404: Not Found" /> */}
 
       {/* <h1>Not Found</h1> */}
 

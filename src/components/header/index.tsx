@@ -7,14 +7,12 @@ import { ThemeContext } from '../../context'
 import { HeaderWrapper, HeaderContent, Title } from './header.styles'
 
 interface Props {
-  // TODO
   readonly location: Location
   readonly title: string
 }
 
 const Header = ({ location, title }: Props) => {
-  // @ts-ignore
-  const rootPath = `${__PATH_PREFIX__}/` // TODO
+  const rootPath = `${__PATH_PREFIX__}/`
 
   const [theme, setTheme] = useContext(ThemeContext)
 

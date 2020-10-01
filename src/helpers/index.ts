@@ -20,7 +20,7 @@ export const formatPostDate = (date: Date, lang: string) => {
   date = new Date(date)
 
   // TODO types
-  const args: any = [
+  const args = [
     lang,
     { day: 'numeric', month: 'long', year: 'numeric' },
   ].filter(Boolean)

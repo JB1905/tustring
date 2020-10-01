@@ -21,8 +21,8 @@ const NoResults = styled.div`
 `
 
 interface Props {
-  readonly data: BlogQuery // TODO
-  readonly location: Location // TODO
+  readonly data: BlogQuery
+  readonly location: Location
 }
 
 const BlogIndex = ({ data, location }: Props) => {

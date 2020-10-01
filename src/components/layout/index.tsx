@@ -11,12 +11,10 @@ import { Page, Main, Footer } from './layout.styles'
 import { LayoutQuery } from '../../../graphql-types'
 
 interface Props {
-  // TODO
   readonly children: React.ReactNode
   readonly location: Location
 }
 
-// TODO
 const Layout = ({ children, location }: Props) => {
   const { site } = useStaticQuery<LayoutQuery>(query)
 

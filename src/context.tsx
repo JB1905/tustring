@@ -8,8 +8,7 @@ interface Props {
   readonly children: React.ReactNode
 }
 
-export const ThemeProvider = ({ children }:Props) => {
-// TODO
+export const ThemeProvider = ({ children }: Props) => {
   const [theme, setTheme] = useState(
     typeof window !== 'undefined'
       ? window.localStorage.getItem('theme')

@@ -4,7 +4,6 @@ import { DebounceInput } from 'react-debounce-input'
 export const Wrapper = styled.div`
   padding: 8px 0;
   position: sticky;
-  /* TODO top: px; */
 `
 
 export const SearchField = styled(DebounceInput)`

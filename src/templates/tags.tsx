@@ -47,4 +47,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default Tags // TODO move to top???
+export default Tags

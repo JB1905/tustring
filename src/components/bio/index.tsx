@@ -23,7 +23,6 @@ import { BioQuery } from '../../../graphql-types'
 const Bio = () => {
   const [theme] = useContext(ThemeContext)
 
-  // TODO
   const data = useStaticQuery<BioQuery>(query)
 
   const { author, social } = data.site.siteMetadata

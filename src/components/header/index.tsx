@@ -7,11 +7,12 @@ import { ThemeContext } from '../../context'
 import { HeaderWrapper, HeaderContent, Title } from './header.styles'
 
 interface Props {
-  readonly location: Location // TODO
+  // TODO
+  readonly location: Location
   readonly title: string
 }
 
-const Header: React.FC<Props> = ({ location, title }) => {
+const Header = ({ location, title }: Props) => {
   // @ts-ignore
   const rootPath = `${__PATH_PREFIX__}/` // TODO
 
@@ -25,7 +26,7 @@ const Header: React.FC<Props> = ({ location, title }) => {
         </Title>
 
         <DarkModeToggle
-          onChange={(isDark:boolean) => setTheme(isDark ? 'dark' : 'light')}
+          onChange={(isDark: boolean) => setTheme(isDark ? 'dark' : 'light')}
           checked={theme === 'dark'}
           size={60}
         />

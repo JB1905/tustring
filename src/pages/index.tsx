@@ -3,10 +3,12 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
-// import SEO from "../components/seo"
+import SEO from '../components/seo'
 import Bio from '../components/bio'
 import SearchForm from '../components/search-form'
 import Post from '../components/post'
+
+import { BlogQuery } from '../../graphql-types'
 
 import { isFeatureEnabled } from '../../features'
 
@@ -19,11 +21,11 @@ const NoResults = styled.div`
 `
 
 interface Props {
-  readonly data: any // TODO
+  readonly data: BlogQuery // TODO
   readonly location: Location // TODO
 }
 
-const BlogIndex: React.FC<Props> = ({ data, location }) => {
+const BlogIndex = ({ data, location }: Props) => {
   const allPosts = data.allMarkdownRemark.edges
 
   const categories = data.categories.group
@@ -36,7 +38,7 @@ const BlogIndex: React.FC<Props> = ({ data, location }) => {
   })
 
   const handleInputChange = (event: any) => {
-    const query = event.target.value
+    const query = event.target.value // TODO
 
     const posts = data.allMarkdownRemark.edges || []
 
@@ -58,7 +60,7 @@ const BlogIndex: React.FC<Props> = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      {/* <SEO title="Najnowsze" /> */}
+      <SEO title="Najnowsze" />
 
       <Bio />
 
@@ -97,10 +99,8 @@ const BlogIndex: React.FC<Props> = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
-
 export const pageQuery = graphql`
-  query {
+  query Blog {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       ...BlogPost
     }
@@ -112,3 +112,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default BlogIndex

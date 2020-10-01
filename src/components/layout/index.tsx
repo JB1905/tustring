@@ -1,4 +1,3 @@
-import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import Global from '../../styles/global'
@@ -9,48 +8,40 @@ import Header from '../header'
 
 import { Page, Main, Footer } from './layout.styles'
 
-import { isFeatureEnabled } from '../../../features'
+import { LayoutQuery } from '../../../graphql-types'
 
 interface Props {
-  readonly location: Location // TODO
+  // TODO
+  readonly children: React.ReactNode
+  readonly location: Location
 }
 
-const Layout: React.FC<Props> = ({ children, location }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `
-  )
+// TODO
+const Layout = ({ children, location }: Props) => {
+  const { site } = useStaticQuery<LayoutQuery>(query)
 
   return (
     <ThemeProvider>
       <Page>
+        {/* TODO */}
         <Header location={location} title={site.siteMetadata.title} />
 
         <Main>{children}</Main>
 
+        {/* TODO */}
         <Footer>
-          Zbudowane przy użyciu{' '}
-          <a href="https://www.gatsbyjs.org/">Gatsby.js</a>
-          
-          {isFeatureEnabled('footerOpenSource') && (
-            <>
-              {', kod źródłowy dostępny '}
-              <a href="https://github.com/JB1905/tu-string/">Open Source</a>!
-            </>
-          )}
+          <p>
+            Zbudowane przy użyciu{' '}
+            <a href="https://www.gatsbyjs.org/">Gatsby.js</a>,<br />
+            kod źródłowy dostępny{' '}
+            <a href="https://github.com/JB1905/tu-string/">Open Source</a>!
+          </p>
 
-          {isFeatureEnabled('feed') && (
-            <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
-              RSS
-            </a>
-          )}
+          {/* <p style={{opacity: 0.5}}>&bull; &bull; &bull;</p> */}
+
+          <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
+            Subskrybuj kanał RSS
+          </a>
         </Footer>
 
         <Global />
@@ -58,5 +49,15 @@ const Layout: React.FC<Props> = ({ children, location }) => {
     </ThemeProvider>
   )
 }
+
+export const query = graphql`
+  query Layout {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`
 
 export default Layout

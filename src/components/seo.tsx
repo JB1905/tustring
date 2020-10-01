@@ -1,6 +1,7 @@
-import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
+
+import { SeoQuery } from '../../graphql-types'
 
 interface Props {
   readonly description?: string
@@ -10,14 +11,14 @@ interface Props {
   readonly title: string
 }
 
-const SEO: React.FC<Props> = ({
+const SEO = ({
   description = '',
   lang = 'pl',
   meta = [],
   // keywords = [],
   title,
-}) => {
-  const { site } = useStaticQuery<any>(query)
+}: Props) => {
+  const { site } = useStaticQuery<SeoQuery>(query)
 
   const metaDescription = description || site.siteMetadata.description
 
@@ -66,7 +67,7 @@ const SEO: React.FC<Props> = ({
 }
 
 export const query = graphql`
-  query DefaultSEO {
+  query SEO {
     site {
       siteMetadata {
         title

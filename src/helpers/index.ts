@@ -12,7 +12,6 @@ export const formatReadingTime = (minutes: number) => {
   }
 }
 
-// TODO types
 export const formatPostDate = (date: Date, lang: string) => {
   if (typeof Date.prototype.toLocaleDateString !== 'function') {
     return date
@@ -20,6 +19,7 @@ export const formatPostDate = (date: Date, lang: string) => {
 
   date = new Date(date)
 
+  // TODO types
   const args: any = [
     lang,
     { day: 'numeric', month: 'long', year: 'numeric' },

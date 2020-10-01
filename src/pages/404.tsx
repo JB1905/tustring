@@ -1,33 +1,32 @@
-import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
+import { NotFoundQuery } from '../../graphql-types'
+
 interface Props {
-  readonly data: any // TODO
+  readonly data: NotFoundQuery
   readonly location: Location
 }
 
 // TODO update component
-const NotFoundPage: React.FC<Props> = ({ data, location }) => {
+const NotFoundPage = ({ data, location }: Props) => {
   const siteTitle = data.site.siteMetadata.title
 
   return (
     <Layout location={location} title={siteTitle}>
-      {/* <SEO title="404: Not Found" /> */}
+      <SEO title="404: Not Found" />
 
-      {/* <h1>Not Found</h1> */}
+      <h2>Not Found</h2>
 
-      {/* <p>You just hit a route that doesn&#39;t exist... the sadness.</p> */}
+      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     </Layout>
   )
 }
 
-export default NotFoundPage
-
 export const pageQuery = graphql`
-  query {
+  query NotFound {
     site {
       siteMetadata {
         title
@@ -35,3 +34,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default NotFoundPage

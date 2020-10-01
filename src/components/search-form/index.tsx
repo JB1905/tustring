@@ -1,8 +1,8 @@
-import React from 'react'
+import { DebounceInput } from 'react-debounce-input'
 
 import { Wrapper, SearchField } from './search-form.styles'
 
-const SearchForm: React.FC = props => (
+const SearchForm = (props: DebounceInput) => (
   <Wrapper>
     <SearchField {...props} />
   </Wrapper>

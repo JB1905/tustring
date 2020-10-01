@@ -1,16 +1,17 @@
-import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import { formatPostDate, formatReadingTime } from '../../helpers'
 
 import { Wrapper, Title } from './post.styles'
 
+import { BlogPostFragment } from '../../../graphql-types'
+
 interface Props {
   readonly data: any // TODO
   readonly isLastItem: boolean
 }
 
-const Post: React.FC<Props> = ({ data, isLastItem = false }) => {
+const Post = ({ data, isLastItem = false }: Props) => {
   const title = data.frontmatter.title || data.fields.slug
 
   return (

@@ -4,7 +4,12 @@ export const ThemeContext = React.createContext<
   [string, React.Dispatch<React.SetStateAction<string>>]
 >([undefined, () => null])
 
-export const ThemeProvider: React.FC = ({ children }) => {
+interface Props {
+  readonly children: React.ReactNode
+}
+
+export const ThemeProvider = ({ children }:Props) => {
+// TODO
   const [theme, setTheme] = useState(
     typeof window !== 'undefined'
       ? window.localStorage.getItem('theme')

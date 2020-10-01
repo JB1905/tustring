@@ -24,9 +24,9 @@ export const Profile = styled.div`
 
   ::before {
     content: '';
+    position: absolute;
     width: calc(var(--author-pic-size) + 8px);
     height: calc(var(--author-pic-size) + 8px);
-    position: absolute;
     background-image: url('/trianglify.svg');
     background-size: cover;
     margin-left: -4px;

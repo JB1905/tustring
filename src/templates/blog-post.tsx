@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import { DiscussionEmbed } from 'disqus-react'
@@ -8,6 +7,8 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 import { formatPostDate } from '../helpers'
+
+import { BlogPostBySlugQuery,SitePageContext } from '../../graphql-types'
 
 import { isFeatureEnabled } from '../../features'
 
@@ -35,8 +36,8 @@ const TagList = styled.ul`
 
 const TagItem = styled.li`
   border: 1px solid var(--border-color);
-  margin-right: 4px;
   border-radius: var(--radius-corners);
+  margin-right: 4px;
 
   a {
     padding: 4px 12px;
@@ -45,12 +46,12 @@ const TagItem = styled.li`
 `
 
 interface Props {
-  readonly data: any
-  readonly pageContext: any
-  readonly location: any
+  readonly data: BlogPostBySlugQuery
+  readonly pageContext: SitePageContext
+  readonly location: Location
 }
 
-const BlogPostTemplate: React.FC<Props> = ({ data, pageContext, location }) => {
+const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
   const post = data.markdownRemark
 
   const siteTitle = data.site.siteMetadata.title
@@ -60,7 +61,9 @@ const BlogPostTemplate: React.FC<Props> = ({ data, pageContext, location }) => {
   const { title, description, date, tags } = post.frontmatter
 
   return (
+    // TODO
     <Layout location={location} title={siteTitle}>
+      {/* TODO */}
       <SEO title={title} description={description || post.excerpt} />
 
       <article>
@@ -122,8 +125,6 @@ const BlogPostTemplate: React.FC<Props> = ({ data, pageContext, location }) => {
   )
 }
 
-export default BlogPostTemplate
-
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
@@ -145,3 +146,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default BlogPostTemplate

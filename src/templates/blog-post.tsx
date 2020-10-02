@@ -1,15 +1,16 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import styled from "styled-components"
-import { DiscussionEmbed } from "disqus-react"
+import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
+import { DiscussionEmbed } from 'disqus-react'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Bio from '../components/bio'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
-import { formatPostDate } from "../helpers"
+import { formatPostDate } from '../helpers'
 
-import { isFeatureEnabled } from "../../features"
+import { BlogPostBySlugQuery, SitePageContext } from '../../graphql-types'
+
+import { isFeatureEnabled } from '../../features'
 
 const Footer = styled.footer`
   margin-top: 50px;
@@ -35,8 +36,8 @@ const TagList = styled.ul`
 
 const TagItem = styled.li`
   border: 1px solid var(--border-color);
-  margin-right: 4px;
   border-radius: var(--radius-corners);
+  margin-right: 4px;
 
   a {
     padding: 4px 12px;
@@ -44,26 +45,30 @@ const TagItem = styled.li`
   }
 `
 
-const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark
+interface Props {
+  readonly data: BlogPostBySlugQuery
+  readonly pageContext: SitePageContext
+  readonly location: Location
+}
 
-  const siteTitle = data.site.siteMetadata.title
+const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
+  const post = data.markdownRemark
 
   const { previous, next } = pageContext
 
   const { title, description, date, tags } = post.frontmatter
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title={title} description={description || post.excerpt} />
+    <Layout location={location}>
+      <SEO title={title} description={description ?? post.excerpt} />
 
       <article>
         <header>
           <h1>{title}</h1>
 
-          <span>{formatPostDate(date, "pl")}</span>
+          <span>{formatPostDate(date, 'pl')}</span>
 
-          {isFeatureEnabled("tags") && (
+          {isFeatureEnabled('tags') && (
             <TagList>
               {tags?.map(tag => (
                 <TagItem>
@@ -81,14 +86,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </Footer>
       </article>
 
-      {isFeatureEnabled("comments") && (
+      {isFeatureEnabled('comments') && (
         <DiscussionEmbed
           shortname="tu-string"
           config={{
             title,
-            url: "http://localhost:8000",
+            url: 'http://localhost:8000',
             identifier: title,
-            language: "pl_PL",
+            language: 'pl_PL',
           }}
         />
       )}
@@ -116,16 +121,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   )
 }
 
-export default BlogPostTemplate
-
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
@@ -139,3 +136,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default BlogPostTemplate

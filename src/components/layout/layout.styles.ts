@@ -1,6 +1,6 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
-import { limitedArea } from "../../styles/mixins"
+import { limitedArea } from '../../styles/mixins'
 
 export const Page = styled.div`
   display: flex;
@@ -22,4 +22,8 @@ export const Footer = styled.footer`
   ${limitedArea}
   padding: 2.5rem 1.5rem calc(2.5rem + env(safe-area-inset-bottom));
   text-align: center;
+
+  p {
+    margin-top: 0;
+  }
 `

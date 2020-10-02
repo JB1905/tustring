@@ -1,22 +1,27 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link, graphql } from 'gatsby'
 
-import { formatPostDate, formatReadingTime } from "../../helpers"
+import { formatPostDate, formatReadingTime } from '../../helpers'
 
-import { Wrapper, Title } from "./post.styles"
+import { PostWrapper, PostTitle } from './post.styles'
 
-const Post = ({ data, isLastItem = false }) => {
+// import { BlogPostFragment } from '../../../graphql-types'
+
+interface Props {
+  readonly data: any // TODO
+}
+
+const Post = ({ data }: Props) => {
   const title = data.frontmatter.title || data.fields.slug
 
   return (
-    <Wrapper isLastItem={isLastItem}>
+    <PostWrapper>
       <header>
-        <Title>
+        <PostTitle>
           <Link to={data.fields.slug}>{title}</Link>
-        </Title>
+        </PostTitle>
 
         <span>
-          {formatPostDate(data.frontmatter.date, "pl")} &bull;{" "}
+          {formatPostDate(data.frontmatter.date, 'pl')} &bull;{' '}
           {formatReadingTime(Math.ceil(data.fields.readingTime.minutes))}
         </span>
       </header>
@@ -28,7 +33,7 @@ const Post = ({ data, isLastItem = false }) => {
           }}
         />
       </section>
-    </Wrapper>
+    </PostWrapper>
   )
 }
 

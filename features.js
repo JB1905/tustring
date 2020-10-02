@@ -1,13 +1,9 @@
 const featureFlags = {
   footerOpenSource: false,
-  comments: false,
-  tags: false,
+  comments: true,
+  tags: true,
   searchForm: false,
   filters: false,
-  fixedPWAiOS: false,
-  sources: false,
-  updatedThemeSwitch: false,
-  feed: false,
 }
 
 export const isFeatureEnabled = name => featureFlags[name]

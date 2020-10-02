@@ -1,14 +1,16 @@
-import React, { useState } from "react"
-import { graphql } from "gatsby"
-import styled from "styled-components"
+import React, { useState } from 'react'
+import { graphql } from 'gatsby'
+import styled from 'styled-components'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Bio from "../components/bio"
-import SearchForm from "../components/search-form"
-import Post from "../components/post"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Bio from '../components/bio'
+import SearchForm from '../components/search-form'
+import Post from '../components/post'
 
-import { isFeatureEnabled } from "../../features"
+import { BlogQuery } from '../../graphql-types'
+
+import { isFeatureEnabled } from '../../features'
 
 const NoResults = styled.div`
   flex: 1;
@@ -18,19 +20,24 @@ const NoResults = styled.div`
   min-height: 140px;
 `
 
-const BlogIndex = ({ data, location }) => {
+interface Props {
+  readonly data: BlogQuery
+  readonly location: Location
+}
+
+const BlogIndex = ({ data, location }: Props) => {
   const allPosts = data.allMarkdownRemark.edges
 
   const categories = data.categories.group
 
-  const emptyQuery = ""
+  const emptyQuery = ''
 
   const [state, setState] = useState({
     filteredData: [],
     query: emptyQuery,
   })
 
-  const handleInputChange = event => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const query = event.target.value
 
     const posts = data.allMarkdownRemark.edges || []
@@ -41,10 +48,7 @@ const BlogIndex = ({ data, location }) => {
       return title.toLowerCase().includes(query.toLowerCase())
     })
 
-    setState({
-      query,
-      filteredData,
-    })
+    setState({ query, filteredData })
   }
 
   const { filteredData, query } = state
@@ -57,7 +61,7 @@ const BlogIndex = ({ data, location }) => {
 
       <Bio />
 
-      {isFeatureEnabled("filters") && (
+      {isFeatureEnabled('filters') && (
         <div>
           {categories.map(({ fieldValue }) => (
             <p>{fieldValue}</p>
@@ -65,8 +69,9 @@ const BlogIndex = ({ data, location }) => {
         </div>
       )}
 
-      {isFeatureEnabled("searchForm") && (
+      {isFeatureEnabled('searchForm') && (
         <SearchForm
+          // @ts-ignore
           debounceTimeout={300}
           onChange={handleInputChange}
           placeholder="Szukaj..."
@@ -74,13 +79,7 @@ const BlogIndex = ({ data, location }) => {
       )}
 
       {posts.length > 0 ? (
-        posts.map(({ node }, index) => (
-          <Post
-            data={node}
-            isLastItem={index === posts.length - 1}
-            key={node.fields.slug}
-          />
-        ))
+        posts.map(({ node }) => <Post data={node} key={node.fields.slug} />)
       ) : (
         <NoResults>
           <h3>Nie znaleziono artykułów</h3>
@@ -90,14 +89,11 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
-
 export const pageQuery = graphql`
-  query {
+  query Blog {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       ...BlogPost
     }
-
     categories: allMarkdownRemark(limit: 2000) {
       group(field: frontmatter___category) {
         fieldValue
@@ -105,3 +101,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default BlogIndex

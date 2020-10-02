@@ -1,4 +1,4 @@
-import { css } from "styled-components"
+import { css } from 'styled-components'
 
 export const limitedArea = css`
   max-width: var(--wrapper-size);

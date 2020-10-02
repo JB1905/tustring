@@ -1,16 +1,23 @@
-import React from "react"
-import { graphql } from "gatsby"
+import { graphql } from 'gatsby'
 
-import Layout from "../components/layout"
-import Post from "../components/post"
+import Layout from '../components/layout'
+import Post from '../components/post'
 
-const Tags = ({ pageContext, data, location }) => {
+import { PageQuery, SitePageContext } from '../../graphql-types'
+
+interface Props {
+  readonly data: PageQuery
+  readonly pageContext: SitePageContext
+  readonly location: Location
+}
+
+const Tags = ({ pageContext, data, location }: Props) => {
   const { tag } = pageContext
 
   const { edges, totalCount } = data.allMarkdownRemark
 
   const tagHeader = `${totalCount} artykuł${
-    totalCount === 1 ? "" : "y"
+    totalCount === 1 ? '' : 'y'
   } z oznaczeniem: "${tag}"`
 
   return (
@@ -28,10 +35,8 @@ const Tags = ({ pageContext, data, location }) => {
   )
 }
 
-export default Tags
-
 export const pageQuery = graphql`
-  query($tag: String) {
+  query Page($tag: String) {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
@@ -41,3 +46,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default Tags

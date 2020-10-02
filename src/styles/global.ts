@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components'
 
-import { AUTHOR_PIC_SIZE, HEADER_HEIGHT } from "../constants"
+import { AUTHOR_PIC_SIZE, HEADER_HEIGHT } from '../constants'
 
 const Global = createGlobalStyle`
   :root {

@@ -53,6 +53,8 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-graphql-codegen`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

@@ -1,8 +1,7 @@
-import Image from "gatsby-image"
-import styled from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Image from 'gatsby-image'
+import styled from 'styled-components'
 
-export const Wrapper = styled.div`
+export const BioWrapper = styled.div`
   display: flex;
   text-align: center;
   align-items: center;
@@ -23,11 +22,11 @@ export const Profile = styled.div`
   margin: 16px 0 10px;
 
   ::before {
-    content: "";
+    content: '';
+    position: absolute;
     width: calc(var(--author-pic-size) + 8px);
     height: calc(var(--author-pic-size) + 8px);
-    position: absolute;
-    background-image: url("/trianglify.svg");
+    background-image: url('/trianglify.svg');
     background-size: cover;
     margin-left: -4px;
     margin-top: -4px;
@@ -52,30 +51,4 @@ export const Content = styled.p`
 export const BadgeWrapper = styled.span`
   height: 34px;
   display: block;
-`
-
-export const SocialMedia = styled.div`
-  height: 30px;
-
-  a {
-    width: 30px;
-    height: 30px;
-    margin: 0 3px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 200ms ease-in-out;
-
-    :hover {
-      transform: scale(1.2);
-    }
-
-    svg {
-      max-width: 1em;
-    }
-  }
-`
-
-export const SocialMediaIcon = styled(FontAwesomeIcon)`
-  color: var(--primary-color);
 `

@@ -60,7 +60,6 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
 
   return (
     <Layout location={location}>
-      {/* TODO */}
       <SEO title={title} description={description ?? post.excerpt} />
 
       <article>

@@ -5,14 +5,13 @@ interface Props {
   readonly location: Location
 }
 
-// TODO update component
 const NotFoundPage = ({ location }: Props) => (
   <Layout location={location}>
-    <SEO title="404: Not Found" />
+    <SEO title="404: Nie znaleziono!" />
 
-    <h2>Not Found</h2>
+    <h2>404</h2>
 
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <p>Nic nie znaleziono!</p>
   </Layout>
 )
 

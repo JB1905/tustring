@@ -22,7 +22,6 @@ const NoResults = styled.div`
 
 interface Props {
   readonly data: BlogQuery
-  // TODO: move to Layout?
   readonly location: Location
 }
 
@@ -72,7 +71,6 @@ const BlogIndex = ({ data, location }: Props) => {
 
       {isFeatureEnabled('searchForm') && (
         <SearchForm
-          //TODO
           // @ts-ignore
           debounceTimeout={300}
           onChange={handleInputChange}
@@ -102,7 +100,6 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       ...BlogPost
     }
-
     categories: allMarkdownRemark(limit: 2000) {
       group(field: frontmatter___category) {
         fieldValue

@@ -19,12 +19,11 @@ export const formatPostDate = (date: Date, lang: string) => {
 
   date = new Date(date)
 
-  // TODO types
-  const args = [
-    lang,
-    { day: 'numeric', month: 'long', year: 'numeric' },
-  ].filter(Boolean)
+  const options = {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }
 
-  // TODO
-  return date.toLocaleDateString(...args)
+  return date.toLocaleDateString(lang, options)
 }

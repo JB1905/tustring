@@ -58,7 +58,7 @@ const Bio = () => {
     <BioWrapper>
       <Profile>
         <AuthorPic
-          // TODO
+          // @ts-ignore
           fixed={data.avatar.childImageSharp.fixed}
           alt={author.name}
         />

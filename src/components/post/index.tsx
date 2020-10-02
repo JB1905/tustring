@@ -2,7 +2,7 @@ import { Link, graphql } from 'gatsby'
 
 import { formatPostDate, formatReadingTime } from '../../helpers'
 
-import { Wrapper, Title } from './post.styles'
+import { PostWrapper, PostTitle } from './post.styles'
 
 import { BlogPostFragment } from '../../../graphql-types'
 
@@ -15,11 +15,11 @@ const Post = ({ data, isLastItem = false }: Props) => {
   const title = data.frontmatter.title || data.fields.slug
 
   return (
-    <Wrapper isLastItem={isLastItem}>
+    <PostWrapper isLastItem={isLastItem}>
       <header>
-        <Title>
+        <PostTitle>
           <Link to={data.fields.slug}>{title}</Link>
-        </Title>
+        </PostTitle>
 
         <span>
           {formatPostDate(data.frontmatter.date, 'pl')} &bull;{' '}
@@ -34,7 +34,7 @@ const Post = ({ data, isLastItem = false }: Props) => {
           }}
         />
       </section>
-    </Wrapper>
+    </PostWrapper>
   )
 }
 

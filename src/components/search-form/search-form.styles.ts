@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { DebounceInput } from 'react-debounce-input'
 
-export const Wrapper = styled.div`
+export const SearchFormWrapper = styled.div`
   padding: 8px 0;
   position: sticky;
 `

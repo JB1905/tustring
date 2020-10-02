@@ -21,12 +21,10 @@ const Layout = ({ children, location }: Props) => {
   return (
     <ThemeProvider>
       <Page>
-        {/* TODO */}
         <Header location={location} title={site.siteMetadata.title} />
 
         <Main>{children}</Main>
 
-        {/* TODO */}
         <Footer>
           <p>
             Zbudowane przy użyciu{' '}
@@ -34,8 +32,6 @@ const Layout = ({ children, location }: Props) => {
             kod źródłowy dostępny{' '}
             <a href="https://github.com/JB1905/tu-string/">Open Source</a>!
           </p>
-
-          {/* <p style={{opacity: 0.5}}>&bull; &bull; &bull;</p> */}
 
           <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
             Subskrybuj kanał RSS

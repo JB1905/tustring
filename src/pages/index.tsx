@@ -22,6 +22,7 @@ const NoResults = styled.div`
 
 interface Props {
   readonly data: BlogQuery
+  // TODO: move to Layout?
   readonly location: Location
 }
 
@@ -37,21 +38,18 @@ const BlogIndex = ({ data, location }: Props) => {
     query: emptyQuery,
   })
 
-  const handleInputChange = (event: any) => {
-    const query = event.target.value // TODO
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const query = event.target.value
 
     const posts = data.allMarkdownRemark.edges || []
 
-    const filteredData = posts.filter((post: any) => {
+    const filteredData = posts.filter((post) => {
       const { title } = post.node.frontmatter
 
       return title.toLowerCase().includes(query.toLowerCase())
     })
 
-    setState({
-      query,
-      filteredData,
-    })
+    setState({ query, filteredData })
   }
 
   const { filteredData, query } = state

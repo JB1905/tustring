@@ -1,7 +1,10 @@
 import styled from 'styled-components'
 
-// TODO readonly
-export const Wrapper = styled.article<{ readonly isLastItem: boolean }>`
+interface Props {
+  readonly isLastItem: boolean
+}
+
+export const PostWrapper = styled.article<Props>`
   padding: 20px 0;
 
   ${({ isLastItem }) =>
@@ -11,6 +14,6 @@ export const Wrapper = styled.article<{ readonly isLastItem: boolean }>`
   `}
 `
 
-export const Title = styled.h2`
+export const PostTitle = styled.h2`
   margin-bottom: 8px;
 `

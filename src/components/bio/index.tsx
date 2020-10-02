@@ -8,15 +8,19 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import GitHubButton from 'react-github-btn'
 
+import SocialMedia from '../social-media'
+
 import { ThemeContext } from '../../context'
 
 import {
-  Wrapper,
+  BioWrapper,
   Profile,
   AuthorPic,
   Content,
   BadgeWrapper,
 } from './bio.styles'
+
+import type { SocialMediaItem } from '../../types/SocialMediaItem'
 
 import { BioQuery } from '../../../graphql-types'
 
@@ -27,7 +31,7 @@ const Bio = () => {
 
   const { author, social } = data.site.siteMetadata
 
-  const socialMedia = [
+  const socialMedia: SocialMediaItem[] = [
     {
       href: social.linkedin,
       name: 'LinkedIn',
@@ -51,7 +55,7 @@ const Bio = () => {
   ]
 
   return (
-    <Wrapper>
+    <BioWrapper>
       <Profile>
         <AuthorPic
           // TODO
@@ -80,16 +84,8 @@ const Bio = () => {
         <span>{author.summary}</span>
       </Content>
 
-      {/* <SocialMedia items={socialMedia} /> */}
-
-      {/* <SocialMedia>
-        {socialMedia.map(({href, name, icon}) => (
-          <a href={href} aria-label={name} key={name}>
-          <SocialMediaIcon icon={icon} />
-        </a>
-        ))}
-      </SocialMedia> */}
-    </Wrapper>
+      <SocialMedia items={socialMedia} />
+    </BioWrapper>
   )
 }
 

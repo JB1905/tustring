@@ -30,7 +30,7 @@ export const HeaderContent = styled.div`
   ${limitedArea}
 `
 
-export const Title = styled.h1`
+export const HeaderTitle = styled.h1`
   font-weight: 900;
   font-size: var(--font-size-lg);
   margin: 0;

@@ -6,8 +6,7 @@ import { SeoQuery } from '../../graphql-types'
 interface Props {
   readonly description?: string
   readonly lang?: string
-  readonly meta?: HTMLMetaElement
-  readonly keywords?: string[]
+  readonly meta?: HTMLMetaElement[]
   readonly title: string
 }
 
@@ -15,7 +14,6 @@ const SEO = ({
   description = '',
   lang = 'pl',
   meta = [],
-  // keywords = [],
   title,
 }: Props) => {
   const { site } = useStaticQuery<SeoQuery>(query)
@@ -27,7 +25,6 @@ const SEO = ({
       title={title}
       titleTemplate={`${site.siteMetadata.title} | %s`}
       htmlAttributes={{ lang }}
-      // keywords={keywords}
       meta={[
         {
           name: `description`,
@@ -51,7 +48,7 @@ const SEO = ({
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.author.name,
         },
         {
           name: `twitter:title`,
@@ -72,8 +69,9 @@ export const query = graphql`
       siteMetadata {
         title
         description
-        # author
-        # keywords
+        author {
+          name
+        }
       }
     }
   }

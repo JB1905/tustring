@@ -1,11 +1,11 @@
 import { DebounceInput } from 'react-debounce-input'
 
-import { Wrapper, SearchField } from './search-form.styles'
+import { SearchFormWrapper, SearchField } from './search-form.styles'
 
 const SearchForm = (props: DebounceInput) => (
-  <Wrapper>
+  <SearchFormWrapper>
     <SearchField {...props} />
-  </Wrapper>
+  </SearchFormWrapper>
 )
 
 export default SearchForm

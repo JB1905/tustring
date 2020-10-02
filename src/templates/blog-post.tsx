@@ -8,7 +8,7 @@ import SEO from '../components/seo'
 
 import { formatPostDate } from '../helpers'
 
-import { BlogPostBySlugQuery,SitePageContext } from '../../graphql-types'
+import { BlogPostBySlugQuery, SitePageContext } from '../../graphql-types'
 
 import { isFeatureEnabled } from '../../features'
 
@@ -54,17 +54,14 @@ interface Props {
 const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
   const post = data.markdownRemark
 
-  const siteTitle = data.site.siteMetadata.title
-
   const { previous, next } = pageContext
 
   const { title, description, date, tags } = post.frontmatter
 
   return (
-    // TODO
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       {/* TODO */}
-      <SEO title={title} description={description || post.excerpt} />
+      <SEO title={title} description={description ?? post.excerpt} />
 
       <article>
         <header>
@@ -127,12 +124,6 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)

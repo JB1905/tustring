@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 import { ThemeContext } from '../../context'
 
-import { HeaderWrapper, HeaderContent, Title } from './header.styles'
+import { HeaderWrapper, HeaderContent, HeaderTitle } from './header.styles'
 
 interface Props {
   readonly location: Location
@@ -19,9 +19,9 @@ const Header = ({ location, title }: Props) => {
   return (
     <HeaderWrapper>
       <HeaderContent>
-        <Title as={location.pathname === rootPath ? 'h1' : 'h3'}>
+        <HeaderTitle as={location.pathname === rootPath ? 'h1' : 'h3'}>
           <Link to={`/`}>{title}</Link>
-        </Title>
+        </HeaderTitle>
 
         <DarkModeToggle
           onChange={(isDark: boolean) => setTheme(isDark ? 'dark' : 'light')}

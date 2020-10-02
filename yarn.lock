@@ -11408,6 +11408,11 @@ parse-srcset@^1.0.2:
   resolved "https://registry.yarnpkg.com/parse-srcset/-/parse-srcset-1.0.2.tgz#f2bd221f6cc970a938d88556abc589caaaa2bde1"
   integrity sha1-8r0iH2zJcKk42IVWq8WJyqqiveE=
 
+parse-unit@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/parse-unit/-/parse-unit-1.0.1.tgz#7e1bb6d5bef3874c28e392526a2541170291eecf"
+  integrity sha1-fhu21b7zh0wo45JSaiVBFwKR7s8=
+
 parse-url@^5.0.0:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/parse-url/-/parse-url-5.0.2.tgz#856a3be1fcdf78dc93fc8b3791f169072d898b59"
@@ -12444,12 +12449,13 @@ react-clientside-effect@^1.2.2:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-react-dark-mode-toggle@0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/react-dark-mode-toggle/-/react-dark-mode-toggle-0.0.5.tgz#413af8e2bf379da8cfcaeaf933baa224e91ee4d6"
-  integrity sha512-Jft/rRcStsoStnKqWIooN5YlaGVa/NvZl8TaB0upA5pN8FoIT9z2SG3KzpmIFBRubw19pA5M9N+srIdo/uQeLA==
+react-dark-mode-toggle@0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/react-dark-mode-toggle/-/react-dark-mode-toggle-0.0.10.tgz#992cf80ab07f65b19a5a39318700402eb891b370"
+  integrity sha512-iVcd87TPgKnm+qYfeqFqgb0TLSXTM0hCKjI7ekVfUC5R/wkqbhCU/CdHQSoCEKDyx6zKEOOWTIJ8uNK2M8k2AA==
   dependencies:
     lottie-react-web "^2.1.4"
+    parse-unit "^1.0.1"
 
 react-debounce-input@^3.2.2:
   version "3.2.2"

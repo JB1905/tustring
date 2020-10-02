@@ -8,14 +8,13 @@ import { PostWrapper, PostTitle } from './post.styles'
 
 interface Props {
   readonly data: any // TODO
-  readonly isLastItem: boolean
 }
 
-const Post = ({ data, isLastItem = false }: Props) => {
+const Post = ({ data }: Props) => {
   const title = data.frontmatter.title || data.fields.slug
 
   return (
-    <PostWrapper isLastItem={isLastItem}>
+    <PostWrapper>
       <header>
         <PostTitle>
           <Link to={data.fields.slug}>{title}</Link>

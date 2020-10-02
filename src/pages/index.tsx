@@ -79,13 +79,7 @@ const BlogIndex = ({ data, location }: Props) => {
       )}
 
       {posts.length > 0 ? (
-        posts.map(({ node }, index) => (
-          <Post
-            data={node}
-            isLastItem={index === posts.length - 1}
-            key={node.fields.slug}
-          />
-        ))
+        posts.map(({ node }) => <Post data={node} key={node.fields.slug} />)
       ) : (
         <NoResults>
           <h3>Nie znaleziono artykułów</h3>

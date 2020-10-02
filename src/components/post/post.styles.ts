@@ -1,17 +1,11 @@
 import styled from 'styled-components'
 
-interface Props {
-  readonly isLastItem: boolean
-}
-
-export const PostWrapper = styled.article<Props>`
+export const PostWrapper = styled.article`
   padding: 20px 0;
 
-  ${({ isLastItem }) =>
-    !isLastItem &&
-    `
+  :not(:last-child) {
     border-bottom: 1px solid var(--border-color);
-  `}
+  }
 `
 
 export const PostTitle = styled.h2`

@@ -1,4 +1,4 @@
-import {SocialMediaWrapper, SocialMediaIcon } from './social-media.styles'
+import { SocialMediaWrapper, SocialMediaIcon } from './social-media.styles'
 
 import type { SocialMediaItem } from '../../types/SocialMediaItem'
 

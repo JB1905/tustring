@@ -43,7 +43,7 @@ const BlogIndex = ({ data, location }: Props) => {
 
     const posts = data.allMarkdownRemark.edges || []
 
-    const filteredData = posts.filter((post) => {
+    const filteredData = posts.filter(post => {
       const { title } = post.node.frontmatter
 
       return title.toLowerCase().includes(query.toLowerCase())

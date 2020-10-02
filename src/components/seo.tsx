@@ -10,12 +10,7 @@ interface Props {
   readonly title: string
 }
 
-const SEO = ({
-  description = '',
-  lang = 'pl',
-  meta = [],
-  title,
-}: Props) => {
+const SEO = ({ description = '', lang = 'pl', meta = [], title }: Props) => {
   const { site } = useStaticQuery<SeoQuery>(query)
 
   const metaDescription = description || site.siteMetadata.description

@@ -10,6 +10,8 @@ import { Page, Main, Footer } from './layout.styles'
 
 import { LayoutQuery } from '../../../graphql-types'
 
+import { isFeatureEnabled } from '../../../features'
+
 interface Props {
   readonly children: React.ReactNode
   readonly location: Location
@@ -28,9 +30,14 @@ const Layout = ({ children, location }: Props) => {
         <Footer>
           <p>
             Zbudowane przy użyciu{' '}
-            <a href="https://www.gatsbyjs.org/">Gatsby.js</a>,<br />
-            kod źródłowy dostępny{' '}
-            <a href="https://github.com/JB1905/tu-string/">Open Source</a>!
+            <a href="https://www.gatsbyjs.org/">Gatsby.js</a>
+            {isFeatureEnabled('footerOpenSource') && (
+              <>
+                ,<br />
+                kod źródłowy dostępny{' '}
+                <a href="https://github.com/JB1905/tu-string/">Open Source</a>!
+              </>
+            )}
           </p>
 
           <a href="/rss.xml" target="_blank" rel="noopener noreferrer">

@@ -14,6 +14,7 @@ const Content = styled.div`
   flex: 1;
   flex-direction: column;
   text-align: center;
+  /* TODO move/add space? */
   ${centerContent}
 `
 

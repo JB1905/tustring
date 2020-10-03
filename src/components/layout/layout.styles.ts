@@ -17,6 +17,7 @@ export const Page = styled.div`
 `
 
 export const Main = styled.main`
+  /* TODO move/add space? */
   ${limitedArea}
   flex: 1;
   display: flex;
@@ -24,6 +25,7 @@ export const Main = styled.main`
 `
 
 export const Footer = styled.footer`
+  /* TODO move/add space? */
   ${limitedArea}
   padding: 2.5rem 1.5rem calc(2.5rem + env(safe-area-inset-bottom));
   text-align: center;

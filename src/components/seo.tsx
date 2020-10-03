@@ -4,13 +4,13 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { SeoQuery } from '../../graphql-types'
 
 interface Props {
+  readonly title: string
   readonly description?: string
   readonly lang?: string
   readonly meta?: HTMLMetaElement[]
-  readonly title: string
 }
 
-const SEO = ({ description = '', lang = 'pl', meta = [], title }: Props) => {
+const SEO = ({ title, description = '', lang = 'pl', meta = [] }: Props) => {
   const { site } = useStaticQuery<SeoQuery>(query)
 
   const metaDescription = description || site.siteMetadata.description

@@ -64,7 +64,7 @@ const BlogIndex = ({ data, location }: Props) => {
       {isFeatureEnabled('filters') && (
         <div>
           {categories.map(({ fieldValue }) => (
-            <p>{fieldValue}</p>
+            <p key={fieldValue}>{fieldValue}</p>
           ))}
         </div>
       )}

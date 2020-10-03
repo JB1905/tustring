@@ -70,8 +70,8 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
 
           {isFeatureEnabled('tags') && (
             <TagList>
-              {tags?.map(tag => (
-                <TagItem>
+              {tags.map(tag => (
+                <TagItem key={tag}>
                   <Link to={`/tags/${tag}`}>{tag}</Link>
                 </TagItem>
               ))}

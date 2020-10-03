@@ -11,6 +11,7 @@ export const Page = styled.div`
   /* min-height: -moz-available;
   min-height: fill-available; */
 
+  /* TODO */
   @supports (-webkit-touch-callout: none) {
     min-height: -webkit-fill-available;
   }

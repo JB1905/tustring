@@ -1,7 +1,7 @@
 const featureFlags = {
   footerOpenSource: false,
-  comments: true,
-  tags: true,
+  comments: false,
+  tags: false,
   searchForm: false,
   filters: false,
 }

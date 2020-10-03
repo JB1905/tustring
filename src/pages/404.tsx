@@ -21,12 +21,15 @@ const Content = styled.div`
 // TODO update name
 const Title = styled.h2`
   font-size: var(--font-size-xl);
+  /* TODO move to mixin */
   margin: 0;
 `
 
 // TODO update name
 const Message = styled.p`
   font-size: var(--font-size-md);
+  /* TODO move to mixin */
+  margin: 0;
 `
 
 const NotFoundPage = ({ location }: Props) => (

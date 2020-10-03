@@ -15,10 +15,9 @@ import { BlogQuery } from '../../graphql-types'
 import { isFeatureEnabled } from '../../features'
 
 const NoResults = styled.div`
-  ${centerContent}
-
   flex: 1;
   min-height: 140px;
+  ${centerContent}
 `
 
 interface Props {

@@ -11,11 +11,10 @@ interface Props {
 
 // TODO update name
 const Content = styled.div`
-  ${centerContent}
-
   flex: 1;
   flex-direction: column;
   text-align: center;
+  ${centerContent}
 `
 
 // TODO update name

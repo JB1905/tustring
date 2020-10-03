@@ -14,6 +14,7 @@ interface Props {
 const Tags = ({ pageContext, data, location }: Props) => {
   const { tag } = pageContext
 
+  // TODO totalCount types
   const { edges, totalCount } = data.allMarkdownRemark
 
   const tagHeader = `${totalCount} artykuł${
@@ -24,12 +25,8 @@ const Tags = ({ pageContext, data, location }: Props) => {
     <Layout location={location}>
       <h3>{tagHeader}</h3>
 
-      {edges.map(({ node }, index) => (
-        <Post
-          data={node}
-          isLastItem={index === edges.length - 1}
-          key={node.fields.slug}
-        />
+      {edges.map(({ node }) => (
+        <Post data={node} key={node.fields.slug} />
       ))}
     </Layout>
   )

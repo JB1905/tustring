@@ -4,12 +4,13 @@
 module.exports = {
   siteMetadata: {
     title: `tuString`,
+    description: `O front-endzie i nie tylko`,
     author: {
       name: `Jakub Biesiada`,
       summary: `Front-end developer i pasjonat nadgryzionych jabłek. Fan nowinek JavaScriptowych i nie tylko. Wielbiciel punk rocka i dobrej kawy.`,
     },
-    description: `O front-endzie i nie tylko`,
     siteUrl: `https://tu-string.now.sh`,
+    keywords: [], // TODO
     social: {
       github: `https://github.com/JB1905/`,
       linkedin: `https://www.linkedin.com/in/jakub-biesiada/`,

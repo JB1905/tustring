@@ -14,6 +14,10 @@ export const Page = styled.div`
   /* TODO */
   @supports (-webkit-touch-callout: none) {
     min-height: -webkit-fill-available;
+
+    @media (display-mode: standalone) {
+      min-height: 100vh;
+    }
   }
 `
 

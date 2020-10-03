@@ -5,7 +5,7 @@ import { limitedArea } from '../../styles/mixins'
 export const Page = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 100vh;
 
   /* TODO */
   /* min-height: -moz-available;

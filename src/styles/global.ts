@@ -17,6 +17,7 @@ const Global = createGlobalStyle`
     --font-size: 1.6rem;
     --font-size-md: 2rem;
     --font-size-lg: 3.4rem;
+    --font-size-xl: 6rem;
 
     --font-family-body: "Nunito", sans-serif;
 

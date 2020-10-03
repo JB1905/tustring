@@ -5,7 +5,6 @@ import { AUTHOR_PIC_SIZE, HEADER_HEIGHT } from '../constants'
 const Global = createGlobalStyle`
   :root {
     --primary-color: #2d2faf;
-    --secondary-color: #8140b1;
     --text-color: #000;
     --card-color: #f8f8f8;
     --border-color: #0001;
@@ -43,7 +42,6 @@ const Global = createGlobalStyle`
 
     &.dark {
       --primary-color: #8284f5;
-      --secondary-color: #c984fa;
       --text-color: #fff;
       --card-color: #242526;
       --border-color: #fff2;

@@ -3,24 +3,28 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
+import { centerContent } from '../styles/mixins'
+
 interface Props {
   readonly location: Location
 }
 
+// TODO update name
 const Content = styled.div`
+  ${centerContent}
+
   flex: 1;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
 `
 
+// TODO update name
 const Title = styled.h2`
   font-size: var(--font-size-xl);
   margin: 0;
 `
 
+// TODO update name
 const Message = styled.p`
   font-size: var(--font-size-md);
 `

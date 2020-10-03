@@ -8,15 +8,16 @@ import Bio from '../components/bio'
 import SearchForm from '../components/search-form'
 import Post from '../components/post'
 
+import { centerContent } from '../styles/mixins'
+
 import { BlogQuery } from '../../graphql-types'
 
 import { isFeatureEnabled } from '../../features'
 
 const NoResults = styled.div`
+  ${centerContent}
+
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 140px;
 `
 

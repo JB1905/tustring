@@ -6,3 +6,10 @@ export const limitedArea = css`
   margin: 0 auto;
   width: 100%;
 `
+
+// TODO add more generic
+export const centerContent = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`

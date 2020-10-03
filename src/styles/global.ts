@@ -14,6 +14,7 @@ const Global = createGlobalStyle`
     --radius-corners: 10px;
     --wrapper-size: 62rem;
 
+    /* TODO update names */
     --font-size: 1.6rem;
     --font-size-md: 2rem;
     --font-size-lg: 3.4rem;

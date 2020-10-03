@@ -24,10 +24,11 @@ export const HeaderWrapper = styled.header`
 `
 
 export const HeaderContent = styled.div`
+  ${limitedArea}
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  ${limitedArea}
 `
 
 export const HeaderTitle = styled.h1`

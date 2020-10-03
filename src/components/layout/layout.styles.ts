@@ -17,16 +17,16 @@ export const Page = styled.div`
 `
 
 export const Main = styled.main`
+  ${limitedArea}
   flex: 1;
   display: flex;
   flex-direction: column;
-  ${limitedArea}
 `
 
 export const Footer = styled.footer`
+  ${limitedArea}
   padding: 2.5rem 1.5rem calc(2.5rem + env(safe-area-inset-bottom));
   text-align: center;
-  ${limitedArea}
 
   p {
     margin-top: 0;

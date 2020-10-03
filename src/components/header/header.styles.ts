@@ -14,10 +14,9 @@ export const HeaderWrapper = styled.header`
   padding-bottom: 0;
   z-index: 10;
 
-  /* TODO */
-  /* button > div {
+  button > div {
     -webkit-tap-highlight-color: transparent;
-  } */
+  }
 
   @supports (backdrop-filter: var(--blur-filter)) {
     backdrop-filter: var(--blur-filter);

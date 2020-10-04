@@ -14,6 +14,7 @@ const Content = styled.div`
   flex: 1;
   flex-direction: column;
   text-align: center;
+  min-height: 150px;
   /* TODO move/add space? */
   ${centerContent}
 `

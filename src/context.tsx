@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import * as React from 'react'
 
 export const ThemeContext = React.createContext<
   [string, React.Dispatch<React.SetStateAction<string>>]

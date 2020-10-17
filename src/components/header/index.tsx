@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import DarkModeToggle from 'react-dark-mode-toggle'
 import { Link } from 'gatsby'
 

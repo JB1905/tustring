@@ -9,27 +9,21 @@ interface Props {
   readonly location: Location
 }
 
-// TODO update name
 const Content = styled.div`
   flex: 1;
   flex-direction: column;
   text-align: center;
   min-height: 150px;
-  /* TODO move/add space? */
   ${centerContent}
 `
 
-// TODO update name
 const Title = styled.h2`
   font-size: var(--font-size-xl);
-  /* TODO move to mixin */
   margin: 0;
 `
 
-// TODO update name
 const Message = styled.p`
   font-size: var(--font-size-md);
-  /* TODO move to mixin */
   margin: 0;
 `
 

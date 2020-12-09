@@ -7,7 +7,6 @@ export const limitedArea = css`
   width: 100%;
 `
 
-// TODO add more generic
 export const centerContent = css`
   display: flex;
   justify-content: center;

@@ -14,13 +14,13 @@ interface Props {
 const Header = ({ location, title }: Props) => {
   const rootPath = `${__PATH_PREFIX__}/`
 
-  const [theme, setTheme] = useContext(ThemeContext)
+  const [theme, setTheme] = useContext(ThemeContext) // TODO safe
 
   return (
     <HeaderWrapper>
       <HeaderContent>
         <HeaderTitle as={location.pathname === rootPath ? 'h1' : 'h3'}>
-          <Link to={`/`}>{title}</Link>
+          <Link to="/">{title}</Link>
         </HeaderTitle>
 
         <DarkModeToggle

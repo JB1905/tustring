@@ -22,13 +22,6 @@ const HTML = (props: Props) => {
         />
         <meta
           name="viewport"
-          // TODO add user scalable no if standalone
-          // content={`viewport-fit=cover, width=device-width, initial-scale=1.0 ${
-          //   typeof window !== 'undefined' &&
-          //   window.matchMedia('(display-mode: standalone)').matches
-          //     ? ', minimum-scale=1.0, maximum-scale=1.0'
-          //     : ''
-          // }`}
           content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
         />
 

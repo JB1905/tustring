@@ -5,25 +5,10 @@ import { limitedArea } from '../../styles/mixins'
 export const Page = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-
-  /* TODO */
-  /* min-height: -moz-available;
-  min-height: fill-available; */
-
-  /* TODO move to global to set variable --page-size/--full-size */
-  /* TODO */
-  @supports (-webkit-touch-callout: none) {
-    min-height: -webkit-fill-available;
-
-    @media (display-mode: standalone) {
-      min-height: 100vh;
-    }
-  }
+  min-height: var(--full-size);
 `
 
 export const Main = styled.main`
-  /* TODO move/add space? */
   ${limitedArea}
   flex: 1;
   display: flex;
@@ -31,7 +16,6 @@ export const Main = styled.main`
 `
 
 export const Footer = styled.footer`
-  /* TODO move/add space? */
   ${limitedArea}
   padding: 2.5rem 1.5rem calc(2.5rem + env(safe-area-inset-bottom));
   text-align: center;

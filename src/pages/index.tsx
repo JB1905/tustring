@@ -18,7 +18,6 @@ import { isFeatureEnabled } from '../../features'
 const NoResults = styled.div`
   flex: 1;
   min-height: 140px;
-  /* TODO move/add space? */
   ${centerContent}
 `
 

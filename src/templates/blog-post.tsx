@@ -91,7 +91,7 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
           shortname="tu-string"
           config={{
             title,
-            url: 'http://localhost:8000',
+            url: process.env.DISCUSSION_URL,
             identifier: title,
             language: 'pl_PL',
           }}
@@ -100,21 +100,21 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
 
       <Pagination>
         <ul>
-          <li>
-            {previous && (
+          {previous && (
+            <li>
               <Link to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
-            )}
-          </li>
+            </li>
+          )}
 
-          <li>
-            {next && (
+          {next && (
+            <li>
               <Link to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
               </Link>
-            )}
-          </li>
+            </li>
+          )}
         </ul>
       </Pagination>
     </Layout>

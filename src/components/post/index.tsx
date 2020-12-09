@@ -4,10 +4,10 @@ import { formatPostDate, formatReadingTime } from '../../helpers'
 
 import { PostWrapper, PostTitle } from './post.styles'
 
-// import { BlogPostFragment } from '../../../graphql-types'
+import { BlogPostFragment } from '../../../graphql-types'
 
 interface Props {
-  readonly data: any // TODO
+  readonly data: BlogPostFragment['edges'][number]['node']
 }
 
 const Post = ({ data }: Props) => {

@@ -25,7 +25,7 @@ import type { SocialMediaItem } from '../../types/SocialMediaItem'
 import { BioQuery } from '../../../graphql-types'
 
 const Bio = () => {
-  const [theme] = useContext(ThemeContext)
+  const [theme] = useContext(ThemeContext) // TODO safe
 
   const data = useStaticQuery<BioQuery>(query)
 

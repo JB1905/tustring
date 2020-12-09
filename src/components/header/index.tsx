@@ -14,7 +14,7 @@ interface Props {
 const Header = ({ location, title }: Props) => {
   const rootPath = `${__PATH_PREFIX__}/`
 
-  const [theme, setTheme] = useContext(ThemeContext) // TODO safe
+  const [theme, setTheme] = useContext(ThemeContext)
 
   return (
     <HeaderWrapper>

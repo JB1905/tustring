@@ -20,7 +20,7 @@ const Header = ({ location, title }: Props) => {
     <HeaderWrapper>
       <HeaderContent>
         <HeaderTitle as={location.pathname === rootPath ? 'h1' : 'h3'}>
-          <Link to={`/`}>{title}</Link>
+          <Link to="/">{title}</Link>
         </HeaderTitle>
 
         <DarkModeToggle

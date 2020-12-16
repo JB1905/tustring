@@ -14,7 +14,6 @@ const Global = createGlobalStyle`
     --radius-corners: 10px;
     --wrapper-size: 62rem;
 
-    /* TODO update names */
     --font-size: 1.6rem;
     --font-size-md: 2rem;
     --font-size-lg: 3.4rem;
@@ -26,6 +25,16 @@ const Global = createGlobalStyle`
 
     --author-pic-size: ${AUTHOR_PIC_SIZE}px;
     --header-height: ${HEADER_HEIGHT}px;
+
+    --full-size: 100vh;
+
+    @supports (-webkit-touch-callout: none) {
+      --full-size: -webkit-fill-available;
+
+    @media (display-mode: standalone) {
+      --full-size: 100vh;
+    }
+  }
 
     @supports (backdrop-filter: var(--blur-filter)) {
       --nav-color: #fffd;

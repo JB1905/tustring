@@ -2,7 +2,10 @@ import { useState, useEffect } from 'react'
 import * as React from 'react'
 
 export const ThemeContext = React.createContext<
-  [string, React.Dispatch<React.SetStateAction<string>>]
+  [
+    string | null | undefined,
+    React.Dispatch<React.SetStateAction<string | null | undefined>>
+  ]
 >([undefined, () => null])
 
 interface Props {
@@ -23,7 +26,9 @@ export const ThemeProvider = ({ children }: Props) => {
       document.body.classList.remove('dark')
     }
 
-    window.localStorage.setItem('theme', theme)
+    if (theme) {
+      window.localStorage.setItem('theme', theme)
+    }
   }, [theme])
 
   return (

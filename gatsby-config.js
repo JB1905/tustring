@@ -1,16 +1,27 @@
-// TODO
-// require('dotenv').config()
+require('dotenv').config()
+
+const TITLE = `tuString`
 
 module.exports = {
   siteMetadata: {
-    title: `tuString`,
+    title: TITLE,
     description: `O front-endzie i nie tylko`,
     author: {
       name: `Jakub Biesiada`,
       summary: `Front-end developer i pasjonat nadgryzionych jabłek. Fan nowinek JavaScriptowych i nie tylko. Wielbiciel punk rocka i dobrej kawy.`,
     },
     siteUrl: `https://tu-string.now.sh`,
-    keywords: [], // TODO
+    keywords: [
+      'front',
+      'end',
+      'javascript',
+      'blog',
+      'css',
+      'html',
+      'react',
+      'string',
+      'programowanie',
+    ],
     social: {
       github: `https://github.com/JB1905/`,
       linkedin: `https://www.linkedin.com/in/jakub-biesiada/`,
@@ -18,6 +29,10 @@ module.exports = {
       twitter: `https://twitter.com/JBiesiad/`,
       portfolio: `https://jb1905.github.io/portfolio/`,
     },
+  },
+  flags: {
+    // FAST_DEV: true,
+    // FAST_REFRESH: true,
   },
   plugins: [
     {
@@ -82,8 +97,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `tuString`,
-        short_name: `tuString`,
+        name: TITLE,
+        short_name: TITLE,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,

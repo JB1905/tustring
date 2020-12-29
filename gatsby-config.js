@@ -101,7 +101,7 @@ module.exports = {
         short_name: TITLE,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#2d2faf`,
         display: `standalone`,
         icon: `static/favicon.ico`,
       },

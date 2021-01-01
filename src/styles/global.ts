@@ -14,6 +14,8 @@ const Global = createGlobalStyle`
     --radius-corners: 10px;
     --wrapper-size: 62rem;
 
+    /* todo space 1.5rem */
+
     --font-size: 1.6rem;
     --font-size-md: 2rem;
     --font-size-lg: 3.4rem;
@@ -21,6 +23,7 @@ const Global = createGlobalStyle`
 
     --font-family-body: "Nunito", sans-serif;
 
+    /* todo check if supports blur */
     --blur-filter: blur(20px);
 
     --author-pic-size: ${AUTHOR_PIC_SIZE}px;
@@ -94,9 +97,8 @@ const Global = createGlobalStyle`
     border: 1px solid var(--border-color);
     position: fixed;
     padding: 12px;
-    /* top: 20px; */
     top: 6px;
-    right: 20px;
+    right: 1.5rem;
     background: #fff9;
     z-index: 1000;
   }

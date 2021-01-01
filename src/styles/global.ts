@@ -98,7 +98,7 @@ const Global = createGlobalStyle`
     display: block;
     padding: 1.5rem;
     /* background-color: var(--primary-color); */
-    background: linear-gradient(90deg, #6f2eb0);
+    background: linear-gradient(90deg, var(--primary-color), #6f2eb0);
   }
 `
 

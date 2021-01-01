@@ -95,7 +95,8 @@ const Global = createGlobalStyle`
   #gatsby-noscript {
     color: var(--page-color);
     text-align: center;
-    display: block;
+    display: inline-block;
+    width: 100%;
     padding: 1.5rem;
     background: linear-gradient(90deg, var(--primary-color), #6f2eb0);
     font-weight: 700;

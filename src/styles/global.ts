@@ -88,6 +88,18 @@ const Global = createGlobalStyle`
       text-decoration: underline;
     }
   }
+
+  #gatsby-noscript {
+    border-radius: var(--radius-corners);
+    border: 1px solid var(--border-color);
+    position: fixed;
+    padding: 12px;
+    /* top: 20px; */
+    top: 6px;
+    right: 20px;
+    background: #fff9;
+    z-index: 1000;
+  }
 `
 
 export default Global

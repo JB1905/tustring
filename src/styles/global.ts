@@ -93,14 +93,12 @@ const Global = createGlobalStyle`
   }
 
   #gatsby-noscript {
-    border-radius: var(--radius-corners);
-    border: 1px solid var(--border-color);
-    position: fixed;
-    padding: 12px;
-    top: 6px;
-    right: 1.5rem;
-    background: #fff9;
-    z-index: 1000;
+    color: var(--page-color);
+    text-align: center;
+    display: block;
+    padding: 1.5rem;
+    background-color: var(--primary-color);
+    /* background: linear-gradient(90deg, ) */
   }
 `
 

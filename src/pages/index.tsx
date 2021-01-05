@@ -6,14 +6,12 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Bio from '../components/bio'
-import SearchForm from '../components/search-form'
+// import SearchForm from '../components/search-form'
 import Post from '../components/post'
 
 import { centerContent } from '../styles/mixins'
 
 import { BlogQuery } from '../../graphql-types'
-
-import { isFeatureEnabled } from '../../features'
 
 const NoResults = styled.div`
   flex: 1;
@@ -29,7 +27,7 @@ interface Props {
 const BlogIndex = ({ data, location }: Props) => {
   const allPosts = data.allMarkdownRemark.edges
 
-  const categories = data.categories.group
+  // const categories = data.categories.group
 
   const emptyQuery = ''
 
@@ -62,22 +60,18 @@ const BlogIndex = ({ data, location }: Props) => {
 
       <Bio />
 
-      {isFeatureEnabled('filters') && (
-        <div>
-          {categories.map(({ fieldValue }) => (
-            <p key={fieldValue}>{fieldValue}</p>
-          ))}
-        </div>
-      )}
+      {/* <div>
+        {categories.map(({ fieldValue }) => (
+          <p key={fieldValue}>{fieldValue}</p>
+        ))}
+      </div> */}
 
-      {isFeatureEnabled('searchForm') && (
-        <SearchForm
-          // @ts-ignore
-          debounceTimeout={300}
-          onChange={handleInputChange}
-          placeholder="Szukaj..."
-        />
-      )}
+      {/* <SearchForm
+        // @ts-ignore
+        debounceTimeout={300}
+        onChange={handleInputChange}
+        placeholder="Szukaj..."
+      /> */}
 
       {posts.length > 0 ? (
         posts.map(({ node }) => <Post data={node} key={node.fields.slug} />)
@@ -92,7 +86,10 @@ const BlogIndex = ({ data, location }: Props) => {
 
 export const pageQuery = graphql`
   query Blog {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { published: { eq: true } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       ...BlogPost
     }
     categories: allMarkdownRemark(limit: 2000) {

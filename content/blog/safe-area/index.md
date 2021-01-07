@@ -1,7 +1,7 @@
 ---
 published: true
 title: Safe Area, czyli jak dostosować wyświetanie stronę do urządzeń z notchem
-date: '2021-01-12:00:00.169Z'
+date: '2015-05-28T22:40:32.169Z'
 category: 'Web'
 tags: ['css', 'ios']
 ---

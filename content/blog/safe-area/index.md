@@ -1,13 +1,20 @@
 ---
 published: true
 title: Safe Area, czyli jak dostosować wyświetanie stronę do urządzeń z notchem
-date: '2015-05-28T22:40:32.169Z'
-category: ''
-tags: ['a']
+date: '2021-01-12:00:00.169Z'
+category: 'Web'
+tags: ['css', 'ios']
 ---
+
+<!-- Jeśli jesteś użytkownikiem/uzytkowniczka iphone lub telefonu ... -->
+<!-- zauwazyles/zauwazylas ... -->
 
 Safe Area to obszar ekranu w którym treść nie będzie przycięta na urządzeniach z ekranem od ramki do ramki, np. w iPhone'ach od wersji X.
 <!-- Aby zabezpieczyć naszą stronę przed ewentualym przcieciem traści lub elementów wyswietlanchy na ekranie posłuymy się CSS-ową funkcją `env` z  -->
+
+<!-- Wcześniej nie env tylko constant -->
+
+## Implementacja
 
 Aby zabezpieczyć naszą stronę przed przycięciem treści lub wyświetlanych elementów musimy zaktualizować lub dodać tag meta viewport w sekcji head.
 
@@ -33,12 +40,15 @@ header {
 }
 ```
 
+zależy od orientacji ekranu.
+
 Domyślną wartość!!!
 
 W przypadku stopki będziemy chcieli dodać do już istniejącego paddingu rozmiar safe area.
 
 ```css
 footer {
+  /* padding: 12px; */
   padding-bottom: calc(20px + env(safe-area-inset-bottom));
 }
 ```
@@ -50,4 +60,15 @@ footer {
 
 ## Podsumowanie
 
+<!-- Mam nadzieje ze w tym krotkim wpisie ... -->
 Safe Area jest jedynie dodatkiem i nie jest wymagana do implementacji, jednak znacznie zwiększa user experiance uytkownikow iPhone'a i innyh urządzeni posiadających wcięcie w ekranie (notch) lub zaokrąglenia narożników.
+
+### Źródła
+https://webkit.org/blog/7929/designing-websites-for-iphone-x/
+https://developer.mozilla.org/en-US/docs/Web/CSS/env()
+https://css-tricks.com/the-notch-and-css/
+https://medium.com/@draganeror/iphone-x-layout-features-with-css-environment-variables-d57423433dec
+https://45royale.com/blog/designing-iphone-x-safari-css-functions/
+https://benfrain.com/how-to-get-the-value-of-phone-notches-environment-variables-env-in-javascript-from-css/
+https://bitsofco.de/css-environment-variables/
+https://www.quirksmode.org/blog/archives/2017/10/safeareainset_v.html

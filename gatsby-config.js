@@ -30,10 +30,6 @@ module.exports = {
       portfolio: `https://jb1905.github.io/portfolio/`,
     },
   },
-  flags: {
-    // FAST_DEV: true,
-    // FAST_REFRESH: true,
-  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,

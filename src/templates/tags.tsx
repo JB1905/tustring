@@ -12,22 +12,22 @@ interface Props {
 }
 
 const Tags = ({ pageContext, data, location }: Props) => {
-  const { tag } = pageContext
+  // const { tag } = pageContext
 
   // TODO totalCount types
-  const { edges, totalCount } = data!.allMarkdownRemark!
+  // const { edges, totalCount } = data!.allMarkdownRemark!
 
-  const tagHeader = `${totalCount} artykuł${
-    totalCount === 1 ? '' : 'y'
-  } z oznaczeniem: "${tag}"`
+  // const tagHeader = `${totalCount} artykuł${
+  //   totalCount === 1 ? '' : 'y'
+  // } z oznaczeniem: "${tag}"`
 
   return (
     <Layout location={location}>
-      <h3>{tagHeader}</h3>
+      {/* <h3>{tagHeader}</h3>
 
       {edges.map(({ node }) => (
         <Post data={node} key={node!.fields!.slug!} />
-      ))}
+      ))} */}
     </Layout>
   )
 }

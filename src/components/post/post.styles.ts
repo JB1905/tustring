@@ -8,6 +8,7 @@ export const PostWrapper = styled.article`
   }
 `
 
+// TODO move to separate file (h1, h2)
 export const PostTitle = styled.h2`
   margin-bottom: 8px;
 `

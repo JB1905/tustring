@@ -90,6 +90,18 @@ export const pageQuery = graphql`
       filter: { frontmatter: { published: { eq: true } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
+      # edges {
+      #   node {
+      #     id
+      #     excerpt(pruneLength: 160)
+      #     html
+      #     frontmatter {
+      #       title
+      #       tags
+      #       date(formatString: "MMMM DD, YYYY")
+      #     }
+      #   }
+      # }
       ...BlogPost
     }
     # categories: allMarkdownRemark(limit: 2000) {

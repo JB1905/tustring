@@ -84,6 +84,11 @@ const Global = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* h1 {
+    font-size: var(--font-size-lg);
+    margin-bottom: 8px;
+  } */
+
   a {
     color: var(--primary-color);
     text-decoration: none;
@@ -91,6 +96,10 @@ const Global = createGlobalStyle`
     :hover {
       text-decoration: underline;
     }
+  }
+
+  ul {
+    padding-left: 2rem;
   }
 
   #gatsby-noscript {

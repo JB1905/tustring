@@ -6,7 +6,7 @@ import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-import { formatPostDate } from '../utils'
+import { formatPostDate } from '../helpers'
 
 import { BlogPostBySlugQuery, SitePageContext } from '../../graphql-types'
 
@@ -56,14 +56,13 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
 
   const {
     title,
-    description,
     date,
     // tags
   } = post!.frontmatter!
 
   return (
     <Layout location={location}>
-      <SEO title={title!} description={description ?? post!.excerpt!} />
+      <SEO title={title!} description={post!.excerpt!} />
 
       <article>
         <header>
@@ -80,7 +79,7 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
           </TagList> */}
         </header>
 
-        {/* <section dangerouslySetInnerHTML={{ __html: post.html }} /> */}
+        <section dangerouslySetInnerHTML={{ __html: post!.html! }} />
 
         <Footer>
           <Bio />
@@ -130,7 +129,6 @@ export const pageQuery = graphql`
         title
         tags
         date(formatString: "MMMM DD, YYYY")
-        description
       }
     }
   }

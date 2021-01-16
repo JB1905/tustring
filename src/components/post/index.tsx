@@ -1,6 +1,6 @@
 import { Link, graphql } from 'gatsby'
 
-import { formatPostDate, formatReadingTime } from '../../utils'
+import { formatPostDate, formatReadingTime } from '../../helpers'
 
 import { PostWrapper, PostTitle } from './post.styles'
 
@@ -27,11 +27,11 @@ const Post = ({ data }: Props) => {
       </header>
 
       <section>
-        {/* <p
+        <p
           dangerouslySetInnerHTML={{
-            __html: data.frontmatter.description || data.excerpt,
+            __html: data.excerpt!,
           }}
-        /> */}
+        />
       </section>
     </PostWrapper>
   )
@@ -53,7 +53,6 @@ export const query = graphql`
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
-          description
         }
       }
     }

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
@@ -25,34 +25,34 @@ interface Props {
 }
 
 const BlogIndex = ({ data, location }: Props) => {
-  const allPosts = data.allMarkdownRemark.edges
+  const posts = data.allMarkdownRemark.edges
 
   // const categories = data.categories.group
 
-  const emptyQuery = ''
+  // const emptyQuery = ''
 
-  const [state, setState] = useState({
-    filteredData: [],
-    query: emptyQuery,
-  })
+  // const [state, setState] = useState({
+  //   filteredData: [],
+  //   query: emptyQuery,
+  // })
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const query = event.target.value
+  // const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  // const query = event.target.value
+  //
+  // const posts = data.allMarkdownRemark.edges || []
+  //
+  // const filteredData = posts.filter(post => {
+  // const { title } = post.node.frontmatter
+  //
+  // return title.toLowerCase().includes(query.toLowerCase())
+  // })
+  //
+  // setState({ query, filteredData })
+  // }
 
-    const posts = data.allMarkdownRemark.edges || []
-
-    const filteredData = posts.filter(post => {
-      const { title } = post.node.frontmatter
-
-      return title.toLowerCase().includes(query.toLowerCase())
-    })
-
-    setState({ query, filteredData })
-  }
-
-  const { filteredData, query } = state
-  const hasSearchResults = filteredData && query !== emptyQuery
-  const posts = hasSearchResults ? filteredData : allPosts
+  // const { filteredData, query } = state
+  // const hasSearchResults = filteredData && query !== emptyQuery
+  // const posts = hasSearchResults ? filteredData : allPosts
 
   return (
     <Layout location={location}>
@@ -74,7 +74,7 @@ const BlogIndex = ({ data, location }: Props) => {
       /> */}
 
       {posts.length > 0 ? (
-        posts.map(({ node }) => <Post data={node} key={node.fields.slug} />)
+        posts.map(({ node }) => <Post data={node} key={node!.fields!.slug!} />)
       ) : (
         <NoResults>
           <h3>Nie znaleziono artykułów</h3>
@@ -92,11 +92,11 @@ export const pageQuery = graphql`
     ) {
       ...BlogPost
     }
-    categories: allMarkdownRemark(limit: 2000) {
-      group(field: frontmatter___category) {
-        fieldValue
-      }
-    }
+    # categories: allMarkdownRemark(limit: 2000) {
+    #   group(field: frontmatter___category) {
+    #     fieldValue
+    #   }
+    # }
   }
 `
 

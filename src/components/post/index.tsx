@@ -1,6 +1,6 @@
 import { Link, graphql } from 'gatsby'
 
-import { formatPostDate, formatReadingTime } from '../../helpers'
+import { formatPostDate, formatReadingTime } from '../../utils'
 
 import { PostWrapper, PostTitle } from './post.styles'
 
@@ -11,27 +11,27 @@ interface Props {
 }
 
 const Post = ({ data }: Props) => {
-  const title = data.frontmatter.title || data.fields.slug
+  const title = data!.frontmatter!.title || data!.fields!.slug
 
   return (
     <PostWrapper>
       <header>
         <PostTitle>
-          <Link to={data.fields.slug}>{title}</Link>
+          <Link to={data!.fields!.slug!}>{title}</Link>
         </PostTitle>
 
         <span>
-          {formatPostDate(data.frontmatter.date, 'pl')} &bull;{' '}
-          {formatReadingTime(Math.ceil(data.fields.readingTime.minutes))}
+          {formatPostDate(data!.frontmatter!.date!, 'pl')} &bull;{' '}
+          {formatReadingTime(Math.ceil(data!.fields!.readingTime!.minutes!))}
         </span>
       </header>
 
       <section>
-        <p
+        {/* <p
           dangerouslySetInnerHTML={{
             __html: data.frontmatter.description || data.excerpt,
           }}
-        />
+        /> */}
       </section>
     </PostWrapper>
   )

@@ -1,15 +1,15 @@
 export const formatReadingTime = (minutes: number) => {
   const cups = Math.round(minutes / 5)
 
+  let icons
+
   if (cups > 5) {
-    return `${new Array(Math.round(cups / Math.E))
-      .fill('🍱')
-      .join('')} ${minutes} min. czytania`
+    icons = new Array(Math.round(cups / Math.E)).fill('🍱')
   } else {
-    return `${new Array(cups || 1)
-      .fill('☕️')
-      .join('')} ${minutes} min. czytania`
+    icons = new Array(cups || 1).fill('☕️')
   }
+
+  return `${icons.join('')} ${minutes} min. czytania`
 }
 
 export const formatPostDate = (date: Date, lang: string) => {

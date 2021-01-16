@@ -13,47 +13,49 @@ interface Props {
 const SEO = ({ title, description = '', lang = 'pl', meta = [] }: Props) => {
   const { site } = useStaticQuery<SeoQuery>(query)
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site!.siteMetadata!.description
 
   return (
     <Helmet
       title={title}
-      titleTemplate={`${site.siteMetadata.title} | %s`}
+      titleTemplate={`${site!.siteMetadata!.title} | %s`}
       htmlAttributes={{ lang }}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author.name,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
+      meta={
+        [
+          {
+            name: `description`,
+            content: metaDescription,
+          },
+          {
+            property: `og:title`,
+            content: title,
+          },
+          {
+            property: `og:description`,
+            content: metaDescription,
+          },
+          {
+            property: `og:type`,
+            content: `website`,
+          },
+          {
+            name: `twitter:card`,
+            content: `summary`,
+          },
+          {
+            name: `twitter:creator`,
+            content: site!.siteMetadata!.author!.name,
+          },
+          {
+            name: `twitter:title`,
+            content: title,
+          },
+          {
+            name: `twitter:description`,
+            content: metaDescription,
+          },
+        ].concat(meta) as any
+      }
     />
   )
 }

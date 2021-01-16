@@ -29,26 +29,26 @@ const Bio = () => {
 
   const data = useStaticQuery<BioQuery>(query)
 
-  const { author, social } = data.site.siteMetadata
+  const { author, social } = data.site!.siteMetadata!
 
   const socialMedia: SocialMediaItem[] = [
     {
-      href: social.linkedin,
+      href: social!.linkedin!,
       name: 'LinkedIn',
       icon: faLinkedin,
     },
     {
-      href: social.github,
+      href: social!.github!,
       name: 'GitHub',
       icon: faGithub,
     },
     {
-      href: social.twitter,
+      href: social!.twitter!,
       name: 'Twitter',
       icon: faTwitter,
     },
     {
-      href: social.facebook,
+      href: social!.facebook!,
       name: 'Facebook',
       icon: faFacebook,
     },
@@ -60,13 +60,13 @@ const Bio = () => {
         <AuthorPic
           // @ts-ignore
           fixed={data.avatar.childImageSharp.fixed}
-          alt={author.name}
+          alt={author!.name!}
         />
       </Profile>
 
       <Content>
-        <a href={social.portfolio}>
-          <strong>{author.name}</strong>
+        <a href={social!.portfolio!}>
+          <strong>{author!.name!}</strong>
         </a>
 
         <BadgeWrapper>
@@ -81,7 +81,7 @@ const Bio = () => {
           </GitHubButton>
         </BadgeWrapper>
 
-        <span>{author.summary}</span>
+        <span>{author!.summary!}</span>
       </Content>
 
       <SocialMedia items={socialMedia} />

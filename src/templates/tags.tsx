@@ -15,7 +15,7 @@ const Tags = ({ pageContext, data, location }: Props) => {
   const { tag } = pageContext
 
   // TODO totalCount types
-  const { edges, totalCount } = data.allMarkdownRemark
+  const { edges, totalCount } = data!.allMarkdownRemark!
 
   const tagHeader = `${totalCount} artykuł${
     totalCount === 1 ? '' : 'y'
@@ -26,7 +26,7 @@ const Tags = ({ pageContext, data, location }: Props) => {
       <h3>{tagHeader}</h3>
 
       {edges.map(({ node }) => (
-        <Post data={node} key={node.fields.slug} />
+        <Post data={node} key={node!.fields!.slug!} />
       ))}
     </Layout>
   )

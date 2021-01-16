@@ -1,16 +1,14 @@
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
-import { DiscussionEmbed } from 'disqus-react'
+// import { DiscussionEmbed } from 'disqus-react'
 
 import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-import { formatPostDate } from '../helpers'
+import { formatPostDate } from '../utils'
 
 import { BlogPostBySlugQuery, SitePageContext } from '../../graphql-types'
-
-import { isFeatureEnabled } from '../../features'
 
 const Footer = styled.footer`
   margin-top: 50px;
@@ -28,22 +26,22 @@ const Pagination = styled.nav`
   }
 `
 
-const TagList = styled.ul`
-  display: flex;
-  padding: 0;
-  list-style: none;
-`
+// const TagList = styled.ul`
+//   display: flex;
+//   padding: 0;
+//   list-style: none;
+// `
 
-const TagItem = styled.li`
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-corners);
-  margin-right: 4px;
+// const TagItem = styled.li`
+//   border: 1px solid var(--border-color);
+//   border-radius: var(--radius-corners);
+//   margin-right: 4px;
 
-  a {
-    padding: 4px 12px;
-    display: inline-block;
-  }
-`
+//   a {
+//     padding: 4px 12px;
+//     display: inline-block;
+//   }
+// `
 
 interface Props {
   readonly data: BlogPostBySlugQuery
@@ -56,11 +54,16 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
 
   const { previous, next } = pageContext
 
-  const { title, description, date, tags } = post.frontmatter
+  const {
+    title,
+    description,
+    date,
+    // tags
+  } = post!.frontmatter!
 
   return (
     <Layout location={location}>
-      <SEO title={title} description={description ?? post.excerpt} />
+      <SEO title={title!} description={description ?? post!.excerpt!} />
 
       <article>
         <header>
@@ -68,50 +71,46 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
 
           <span>{formatPostDate(date, 'pl')}</span>
 
-          {isFeatureEnabled('tags') && (
-            <TagList>
-              {tags.map(tag => (
-                <TagItem key={tag}>
-                  <Link to={`/tags/${tag}`}>{tag}</Link>
-                </TagItem>
-              ))}
-            </TagList>
-          )}
+          {/* <TagList>
+            {tags.map(tag => (
+              <TagItem key={tag}>
+                <Link to={`/tags/${tag}`}>{tag}</Link>
+              </TagItem>
+            ))}
+          </TagList> */}
         </header>
 
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        {/* <section dangerouslySetInnerHTML={{ __html: post.html }} /> */}
 
         <Footer>
           <Bio />
         </Footer>
       </article>
 
-      {isFeatureEnabled('comments') && (
-        <DiscussionEmbed
-          shortname="tu-string"
-          config={{
-            title,
-            url: process.env.DISCUSSION_URL,
-            identifier: title,
-            language: 'pl_PL',
-          }}
-        />
-      )}
+      {/* <DiscussionEmbed
+        shortname="tu-string"
+        config={{
+          title,
+          url: process.env.DISCUSSION_URL,
+          identifier: title,
+          language: 'pl_PL',
+        }}
+      /> */}
 
       <Pagination>
         <ul>
           {previous && (
             <li>
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+              <Link to={previous!.fields!.slug!} rel="prev">
+                ← {previous!.frontmatter!.title!}
               </Link>
             </li>
           )}
 
           {next && (
             <li>
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+              <Link to={next!.fields!.slug!} rel="next">
+                {next!.frontmatter!.title!} →
               </Link>
             </li>
           )}

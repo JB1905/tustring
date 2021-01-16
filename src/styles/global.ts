@@ -14,7 +14,7 @@ const Global = createGlobalStyle`
     --radius-corners: 10px;
     --wrapper-size: 62rem;
 
-    /* todo space 1.5rem */
+    --spaces: 1.5rem;
 
     --font-size: 1.6rem;
     --font-size-md: 2rem;
@@ -23,8 +23,9 @@ const Global = createGlobalStyle`
 
     --font-family-body: "Nunito", sans-serif;
 
-    /* todo check if supports blur */
-    --blur-filter: blur(20px);
+    @supports(backdrop-filter: blur) {
+      --blur-filter: blur(20px);
+    }
 
     --author-pic-size: ${AUTHOR_PIC_SIZE}px;
     --header-height: ${HEADER_HEIGHT}px;
@@ -34,10 +35,10 @@ const Global = createGlobalStyle`
     @supports (-webkit-touch-callout: none) {
       --full-size: -webkit-fill-available;
 
-    @media (display-mode: standalone) {
-      --full-size: 100vh;
+      @media (display-mode: standalone) {
+        --full-size: 100vh;
+      }
     }
-  }
 
     @supports (backdrop-filter: var(--blur-filter)) {
       --nav-color: #fffd;
@@ -62,7 +63,7 @@ const Global = createGlobalStyle`
       --nav-color: #242526;
       --page-color: #18191A;
 
-      @supports (backdrop-filter: var(--blur-filter)) {
+      @supports (backdrop-filter: blur) {
         --nav-color: #242526dd;
       }
 
@@ -97,7 +98,7 @@ const Global = createGlobalStyle`
     text-align: center;
     display: inline-block;
     width: 100%;
-    padding: 1.5rem;
+    padding: var(--spaces);
     background: linear-gradient(90deg, var(--primary-color), #6f2eb0);
     font-weight: 700;
   }

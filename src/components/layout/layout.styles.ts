@@ -17,7 +17,7 @@ export const Main = styled.main`
 
 export const Footer = styled.footer`
   ${limitedArea}
-  padding: 2.5rem 1.5rem calc(2.5rem + env(safe-area-inset-bottom));
+  padding: 2.5rem var(--spaces) calc(2.5rem + env(safe-area-inset-bottom));
   text-align: center;
 
   p {

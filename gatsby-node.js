@@ -26,11 +26,6 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
-        # tagsGroup: allMarkdownRemark(limit: 2000) {
-        #  group(field: frontmatter___tags) {
-        #    fieldValue
-        #  }
-        # }
       }
     `
   )
@@ -55,18 +50,6 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-
-  // const tags = result.data.tagsGroup.group
-
-  // tags.forEach(tag => {
-  //   createPage({
-  //     path: `/tags/${tag.fieldValue}/`,
-  //     component: tagTemplate,
-  //     context: {
-  //       tag: tag.fieldValue,
-  //     },
-  //   })
-  // })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

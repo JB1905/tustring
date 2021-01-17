@@ -1,6 +1,5 @@
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
-// import { DiscussionEmbed } from 'disqus-react'
 
 import Bio from '../components/bio'
 import Layout from '../components/layout'
@@ -26,23 +25,6 @@ const Pagination = styled.nav`
   }
 `
 
-// const TagList = styled.ul`
-//   display: flex;
-//   padding: 0;
-//   list-style: none;
-// `
-
-// const TagItem = styled.li`
-//   border: 1px solid var(--border-color);
-//   border-radius: var(--radius-corners);
-//   margin-right: 4px;
-
-//   a {
-//     padding: 4px 12px;
-//     display: inline-block;
-//   }
-// `
-
 interface Props {
   readonly data: BlogPostBySlugQuery
   readonly pageContext: SitePageContext
@@ -54,11 +36,7 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
 
   const { previous, next } = pageContext
 
-  const {
-    title,
-    date,
-    // tags
-  } = post!.frontmatter!
+  const { title, date } = post!.frontmatter!
 
   return (
     <Layout location={location}>
@@ -69,14 +47,6 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
           <h1>{title}</h1>
 
           <span>{formatPostDate(date, 'pl')}</span>
-
-          {/* <TagList>
-            {tags.map(tag => (
-              <TagItem key={tag}>
-                <Link to={`/tags/${tag}`}>{tag}</Link>
-              </TagItem>
-            ))}
-          </TagList> */}
         </header>
 
         <section dangerouslySetInnerHTML={{ __html: post!.html! }} />
@@ -85,16 +55,6 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
           <Bio />
         </Footer>
       </article>
-
-      {/* <DiscussionEmbed
-        shortname="tu-string"
-        config={{
-          title,
-          url: process.env.DISCUSSION_URL,
-          identifier: title,
-          language: 'pl_PL',
-        }}
-      /> */}
 
       <Pagination>
         <ul>

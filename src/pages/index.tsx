@@ -17,6 +17,10 @@ const NoResults = styled.div`
   flex: 1;
   min-height: 140px;
   ${centerContent}
+
+  h2 {
+    font-size: var(--font-size-md);
+  }
 `
 
 interface Props {
@@ -77,7 +81,7 @@ const BlogIndex = ({ data, location }: Props) => {
         posts.map(({ node }) => <Post data={node} key={node!.fields!.slug!} />)
       ) : (
         <NoResults>
-          <h3>Nie znaleziono artykułów</h3>
+          <h2>Nie znaleziono artykułów</h2>
         </NoResults>
       )}
     </Layout>
@@ -90,18 +94,6 @@ export const pageQuery = graphql`
       filter: { frontmatter: { published: { eq: true } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
-      # edges {
-      #   node {
-      #     id
-      #     excerpt(pruneLength: 160)
-      #     html
-      #     frontmatter {
-      #       title
-      #       tags
-      #       date(formatString: "MMMM DD, YYYY")
-      #     }
-      #   }
-      # }
       ...BlogPost
     }
     # categories: allMarkdownRemark(limit: 2000) {

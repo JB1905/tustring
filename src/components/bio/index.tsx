@@ -71,10 +71,10 @@ const Bio = () => {
 
         <BadgeWrapper>
           <GitHubButton
-            href="https://github.com/JB1905"
+            href={social!.github!}
             data-color-scheme={theme === 'dark' ? 'dark' : 'light'}
             data-size="large"
-            data-show-count={true}
+            data-show-count
             aria-label="Obserwuj @JB1905 na GitHubie"
           >
             Follow @JB1905

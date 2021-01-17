@@ -10,7 +10,7 @@ module.exports = {
       name: `Jakub Biesiada`,
       summary: `Front-end developer i pasjonat nadgryzionych jabłek. Fan nowinek JavaScriptowych i nie tylko. Wielbiciel punk rocka i dobrej kawy.`,
     },
-    siteUrl: `https://tu-string.now.sh`,
+    siteUrl: `https://tustring.pl/`,
     keywords: [
       'front',
       'end',
@@ -27,7 +27,7 @@ module.exports = {
       linkedin: `https://www.linkedin.com/in/jakub-biesiada/`,
       facebook: `https://www.facebook.com/kuba.biesiada/`,
       twitter: `https://twitter.com/JBiesiad/`,
-      portfolio: `https://jb1905.github.io/portfolio/`,
+      portfolio: `https://biesiada.dev/`,
     },
   },
   plugins: [

@@ -5,9 +5,12 @@ import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
+// TODO
+import { PostTitle } from '../components/post/post.styles'
+
 import { formatPostDate } from '../helpers'
 
-import { BlogPostBySlugQuery, SitePageContext } from '../../graphql-types'
+import { BlogPostBySlugQuery } from '../../graphql-types'
 
 const Footer = styled.footer`
   margin-top: 50px;
@@ -27,7 +30,7 @@ const Pagination = styled.nav`
 
 interface Props {
   readonly data: BlogPostBySlugQuery
-  readonly pageContext: SitePageContext
+  readonly pageContext: any // TODO
   readonly location: Location
 }
 
@@ -42,9 +45,10 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
     <Layout location={location}>
       <SEO title={title!} description={post!.excerpt!} />
 
+      {/* TODO replace with Post */}
       <article>
         <header>
-          <h1>{title}</h1>
+          <PostTitle as="h1">{title}</PostTitle>
 
           <span>{formatPostDate(date, 'pl')}</span>
         </header>

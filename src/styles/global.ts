@@ -23,7 +23,7 @@ const Global = createGlobalStyle`
 
     --font-family-body: "Nunito", sans-serif;
 
-    @supports(backdrop-filter: blur) {
+    @supports(backdrop-filter: blur(20px)) {
       --blur-filter: blur(20px);
     }
 
@@ -63,7 +63,7 @@ const Global = createGlobalStyle`
       --nav-color: #242526;
       --page-color: #18191A;
 
-      @supports (backdrop-filter: blur) {
+      @supports (backdrop-filter: var(--blur-filter)) {
         --nav-color: #242526dd;
       }
 

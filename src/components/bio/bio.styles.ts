@@ -27,7 +27,7 @@ export const Profile = styled.div`
     position: absolute;
     width: calc(var(--author-pic-size) + 8px);
     height: calc(var(--author-pic-size) + 8px);
-    background-image: url('/trianglify.svg');
+    background-image: url('/trianglify.svg'); /* TODO replace with gatsby image */
     background-size: cover;
     margin-left: -4px;
     margin-top: -4px;

@@ -28,6 +28,22 @@ const Pagination = styled.nav`
   }
 `
 
+const TagList = styled.ul`
+  display: flex;
+  padding: 0;
+  list-style: none;
+`
+
+const TagItem = styled.li`
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-corners);
+  margin-right: 4px;
+  a {
+    padding: 4px 12px;
+    display: inline-block;
+  }
+`
+
 interface Props {
   readonly data: BlogPostBySlugQuery
   readonly pageContext: any // TODO
@@ -39,7 +55,7 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
 
   const { previous, next } = pageContext
 
-  const { title, date } = post!.frontmatter!
+  const { title, date, tags } = post!.frontmatter!
 
   return (
     <Layout location={location}>
@@ -51,6 +67,14 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
           <PostTitle as="h1">{title}</PostTitle>
 
           <span>{formatPostDate(date, 'pl')}</span>
+
+          <TagList>
+            {tags.map(tag => (
+              <TagItem key={tag}>
+                <Link to={`/tags/${tag}`}>{tag}</Link>
+              </TagItem>
+            ))}
+          </TagList>
         </header>
 
         <section dangerouslySetInnerHTML={{ __html: post!.html! }} />

@@ -1,5 +1,6 @@
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
+import { DiscussionEmbed } from 'disqus-react'
 
 import Bio from '../components/bio'
 import Layout from '../components/layout'
@@ -59,6 +60,16 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
           <Bio />
         </Footer>
       </article>
+
+      <DiscussionEmbed
+        shortname="tu-string" // TODO
+        config={{
+          title: title!,
+          url: process.env.DISCUSSION_URL,
+          identifier: title!,
+          language: 'pl_PL', // TODO
+        }}
+      />
 
       <Pagination>
         <ul>

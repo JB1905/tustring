@@ -1,4 +1,4 @@
-import Image from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 
 export const BioWrapper = styled.div`
@@ -34,7 +34,7 @@ export const Profile = styled.div`
   }
 `
 
-export const AuthorPic = styled(Image)`
+export const AuthorPic = styled(GatsbyImage)`
   min-width: var(--author-pic-size);
   height: var(--author-pic-size);
 

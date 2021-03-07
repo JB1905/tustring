@@ -298,7 +298,7 @@ const HTML = (props: Props) => {
         {props.preBodyComponents}
 
         <noscript key="noscript" id="gatsby-noscript">
-          Ta aplikacja działa najlepiej z włączoną obsługą JavaScript.
+          Ta strona działa najlepiej z włączoną obsługą JavaScript.
         </noscript>
 
         <div

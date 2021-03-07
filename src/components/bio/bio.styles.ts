@@ -1,4 +1,4 @@
-import Image from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 
 export const BioWrapper = styled.div`
@@ -19,7 +19,8 @@ export const BioWrapper = styled.div`
 `
 
 export const Profile = styled.div`
-  margin: 16px 0 10px;
+  margin: 16px 0;
+  position: relative;
 
   ::before {
     content: '';
@@ -31,16 +32,14 @@ export const Profile = styled.div`
     margin-left: -4px;
     margin-top: -4px;
     border-radius: 50%;
+    left: 0;
   }
 `
 
-export const AuthorPic = styled(Image)`
+export const AuthorPic = styled(GatsbyImage)`
   min-width: var(--author-pic-size);
   height: var(--author-pic-size);
-
-  img {
-    border-radius: 50%;
-  }
+  border-radius: 50%;
 `
 
 export const Content = styled.p`

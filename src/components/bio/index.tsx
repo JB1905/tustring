@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { getImage } from 'gatsby-plugin-image'
 import { useStaticQuery, graphql } from 'gatsby'
 import {
   faGithub,
@@ -29,6 +30,9 @@ const Bio = () => {
 
   const data = useStaticQuery<BioQuery>(query)
 
+  // @ts-ignore
+  const image = getImage(data.avatar!)
+
   const { author, social } = data.site!.siteMetadata!
 
   const socialMedia: SocialMediaItem[] = [
@@ -57,11 +61,7 @@ const Bio = () => {
   return (
     <BioWrapper>
       <Profile>
-        <AuthorPic
-          // @ts-ignore
-          fixed={data.avatar.childImageSharp.fixed}
-          alt={author!.name!}
-        />
+        <AuthorPic image={image!} alt={author!.name!} />
       </Profile>
 
       <Content>
@@ -93,9 +93,7 @@ export const query = graphql`
   query Bio {
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
-        fixed(width: 56, height: 56) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(width: 56, height: 56, layout: FIXED)
       }
     }
     site {

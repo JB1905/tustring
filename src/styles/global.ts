@@ -23,7 +23,7 @@ const Global = createGlobalStyle`
 
     --font-family-body: "Nunito", sans-serif;
 
-    @supports(backdrop-filter: blur(20px)) {
+    @supports((backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px))) {
       --blur-filter: blur(20px);
     }
 

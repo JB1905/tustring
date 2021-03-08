@@ -20,7 +20,6 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "gatsby": "^3.0.3",
-    "gatsby-image": "^2.9.0",
     "gatsby-plugin-feed": "^3.0.0",
     "gatsby-plugin-google-analytics": "^3.0.0",
     "gatsby-plugin-google-fonts": "^1.0.1",

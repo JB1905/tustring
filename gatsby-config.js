@@ -101,6 +101,7 @@ module.exports = {
         theme_color: `#2d2faf`,
         display: `standalone`,
         icon: `static/favicon.ico`,
+        orientation: `portrait`,
       },
     },
     `gatsby-plugin-offline`,

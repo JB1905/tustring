@@ -9,7 +9,7 @@ import Post from '../components/post'
 
 import { centerContent } from '../styles/mixins'
 
-import { BlogQuery } from '../../graphql-types'
+import { BlogQuery } from '../__generated__/gatsby-types'
 
 const NoResults = styled.div`
   flex: 1;

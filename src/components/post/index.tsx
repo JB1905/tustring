@@ -4,7 +4,7 @@ import { formatPostDate, formatReadingTime } from '../../helpers'
 
 import { PostWrapper, PostTitle } from './post.styles'
 
-import { BlogPostFragment } from '../../../graphql-types'
+import { BlogPostFragment } from '../../__generated__/gatsby-types'
 
 interface Props {
   readonly data: BlogPostFragment['edges'][number]['node']

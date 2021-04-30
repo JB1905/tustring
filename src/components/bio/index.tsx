@@ -23,12 +23,12 @@ import {
 
 import type { SocialMediaItem } from '../../types/SocialMediaItem'
 
-import { BioQuery } from '../../../graphql-types'
+import { BioQuery } from '../../__generated__/gatsby-types'
 
 const Bio = () => {
   const [theme] = useContext(ThemeContext)
 
-  const data = useStaticQuery<BioQuery>(query)
+  const data = useStaticQuery<GatsbyTypes.BioQuery>(query)
 
   // @ts-ignore
   const image = getImage(data.avatar!)

@@ -10,7 +10,7 @@ import { PostTitle } from '../components/post/post.styles'
 
 import { formatPostDate } from '../helpers'
 
-import { BlogPostBySlugQuery } from '../../graphql-types'
+import { BlogPostBySlugQuery } from '../__generated__/gatsby-types'
 
 const Footer = styled.footer`
   margin-top: 50px;

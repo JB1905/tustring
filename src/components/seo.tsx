@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import { SeoQuery } from '../../graphql-types'
+import { SeoQuery } from '../__generated__/gatsby-types'
 
 interface Props {
   readonly title: string
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const SEO = ({ title, description = '', lang = 'pl', meta = [] }: Props) => {
-  const { site } = useStaticQuery<SeoQuery>(query)
+  const { site } = useStaticQuery<GatsbyTypes.SEOQuery>(query)
 
   const metaDescription = description || site!.siteMetadata!.description
 

@@ -9,7 +9,7 @@ import Header from '../header'
 
 import { Page, Main, Footer } from './layout.styles'
 
-import { LayoutQuery } from '../../../graphql-types'
+import { LayoutQuery } from '../../__generated__/gatsby-types'
 
 interface Props {
   readonly children: React.ReactNode
@@ -17,7 +17,7 @@ interface Props {
 }
 
 const Layout = ({ children, location }: Props) => {
-  const { site } = useStaticQuery<LayoutQuery>(query)
+  const { site } = useStaticQuery<GatsbyTypes.LayoutQuery>(query)
 
   return (
     <ThemeProvider>

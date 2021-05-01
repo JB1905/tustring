@@ -1,13 +1,10 @@
+import { PageProps } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 import { centerContent } from '../styles/mixins'
-
-interface Props {
-  readonly location: Location
-}
 
 const Content = styled.div`
   flex: 1;
@@ -27,7 +24,7 @@ const Message = styled.p`
   margin: 0;
 `
 
-const NotFoundPage = ({ location }: Props) => (
+const NotFoundPage = ({ location }: PageProps) => (
   <Layout location={location}>
     <SEO title="404: Nie znaleziono!" />
 

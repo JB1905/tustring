@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
@@ -21,12 +21,7 @@ const NoResults = styled.div`
   }
 `
 
-interface Props {
-  readonly data: BlogQuery
-  readonly location: Location
-}
-
-const BlogIndex = ({ data, location }: Props) => {
+const BlogIndex = ({ data, location }: PageProps<BlogQuery>) => {
   const posts = data.allMarkdownRemark.edges
 
   return (

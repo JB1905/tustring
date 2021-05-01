@@ -1,4 +1,4 @@
-import { Link, graphql } from 'gatsby'
+import { Link, graphql, PageProps } from 'gatsby'
 import styled from 'styled-components'
 
 import Bio from '../components/bio'
@@ -28,13 +28,11 @@ const Pagination = styled.nav`
   }
 `
 
-interface Props {
-  readonly data: BlogPostBySlugQuery
-  readonly pageContext: any // TODO
-  readonly location: Location
-}
-
-const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
+const BlogPostTemplate = ({
+  data,
+  pageContext,
+  location,
+}: PageProps<BlogPostBySlugQuery, any /* TODO */>) => {
   const post = data.markdownRemark
 
   const { previous, next } = pageContext
